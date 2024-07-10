@@ -65,8 +65,8 @@ import ErrorComponent from "./components/ErrorComponent.vue";
       </button-count> -->
       <ComponentA />
       <nav>
-        <!--<RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">Home</RouterLink>
+        <!--<RouterLink to="/about">About</RouterLink>
         <RouterLink to="/product">Product</RouterLink>-->
         <RouterLink to="/Donvido">Đơn vị đo</RouterLink>
         <RouterLink to="/ListPoke">ListPoke</RouterLink>
