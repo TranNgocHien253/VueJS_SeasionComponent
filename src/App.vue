@@ -6,38 +6,38 @@ import LoadingComponent from "./components/LoadingComponent.vue";
 import ErrorComponent from "./components/ErrorComponent.vue";
 
 
-import { defineAsyncComponent, provide, ref, watchEffect } from "vue";
-const count = ref(0);
-const ComponentVModel = defineAsyncComponent({
-  loader: () => import("./components/ComponentVModel.vue"),
-  loadingComponent: LoadingComponent,
-  errorComponent: ErrorComponent,
-});
-const increaseBy = (number1, number2) => {
-  count.value = count.value + number1 + number2;
-};
-const email = ref("");
-const username = ref("");
+// import { defineAsyncComponent, provide, ref, watchEffect } from "vue";
+// const count = ref(0);
+// const ComponentVModel = defineAsyncComponent({
+//   loader: () => import("./components/ComponentVModel.vue"),
+//   loadingComponent: LoadingComponent,
+//   errorComponent: ErrorComponent,
+// });
+// const increaseBy = (number1, number2) => {
+//   count.value = count.value + number1 + number2;
+// };
+// const email = ref("");
+// const username = ref("");
 
-watchEffect(() => {
-  console.log(email.value);
-});
+// watchEffect(() => {
+//   console.log(email.value);
+// });
 
-const changeEmailDefaultFromParent = () => {
-  email.value = "techmely.creation@gmail.com";
-};
-const changeUsernameDefaultFromParent = () => {
-  username.value = "techmely";
-};
-const currentLocale = ref("vietnam");
+// const changeEmailDefaultFromParent = () => {
+//   email.value = "techmely.creation@gmail.com";
+// };
+// const changeUsernameDefaultFromParent = () => {
+//   username.value = "techmely";
+// };
+// const currentLocale = ref("vietnam");
 
-const updateCurrentLocale = () => {
-  currentLocale.value = "english";
-};
-provide("locale", {
-  locale: currentLocale,
-  updateLocale: updateCurrentLocale,
-});
+// const updateCurrentLocale = () => {
+//   currentLocale.value = "english";
+// };
+// provide("locale", {
+//   locale: currentLocale,
+//   updateLocale: updateCurrentLocale,
+// });
 
 
 </script>
@@ -65,9 +65,9 @@ provide("locale", {
       </button-count> -->
       <ComponentA />
       <nav>
-        <RouterLink to="/">Home</RouterLink>
+        <!--<RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/product">Product</RouterLink>
+        <RouterLink to="/product">Product</RouterLink>-->
         <RouterLink to="/Donvido">Đơn vị đo</RouterLink>
         <RouterLink to="/ListPoke">ListPoke</RouterLink>
       </nav>
@@ -92,6 +92,7 @@ nav {
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;
+  width: 150px;
 }
 
 nav a.router-link-exact-active {
