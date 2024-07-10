@@ -1,0 +1,116 @@
+
+.hienthiCount {
+    display: flex;
+    margin: 10px;
+}
+.div {
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  margin: 20px 20px auto;
+  padding: 20px;
+  width: 900px;
+  border-radius: 5px;
+}
+.Search {
+  background-color: #728EAF;
+  margin: 10px;
+  padding: 20px;
+  display: flex;
+  border-radius: 10px;
+  color: #ffffff;
+}
+button {
+  border-radius: 30px;
+  background-color: rgb(255, 255, 255);
+  margin-left: 20px;
+  padding: 5px 20px 5px 20px;
+}
+input {
+  border-radius: 6px;
+  padding: 5px;
+}
+.container {
+  border-radius: 10px;
+  background-color: rgb(233, 243, 252);
+  margin: 10px;
+  padding: 20px;
+  width: 100%;
+}
+select {
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  margin-left: 20px;
+  padding: 5px 20px 5px 20px;
+}
+.hienThi {
+  display: flex;
+  margin-bottom: 20px;
+}
+.hienthiEnd {
+  margin-left: auto;
+}
+.list {
+  overflow-x: auto;
+}
+table {
+    width: 100%;
+    white-space: nowrap;  
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+  thead {
+    background-color: #728EAF;
+    color: white;
+  }
+  th, td {
+    padding: 8px;
+    text-align: left;
+    width: 100px;
+    max-width: 100px; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+}
+  tbody tr:nth-child(even) {
+    background-color: #ecf1ff;
+  }
+  tbody tr:hover {
+    background-color: #dadada;
+  }                 
+th input[type="checkbox"] {
+  margin: auto;
+  display: block;
+}
+.checkbox {
+  margin-top: 15px;
+  margin-left: 15px;
+}
+.checkboxAll {
+  margin-top: 15px;
+}.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  margin: 0 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  outline: none;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  margin: 0 10px;
+}
