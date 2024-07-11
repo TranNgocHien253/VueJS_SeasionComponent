@@ -14,7 +14,7 @@
 }
 .Search {
   background-color: #728EAF;
-  margin: 10px;
+  margin-bottom: 10px;
   padding: 20px;
   display: flex;
   border-radius: 10px;
@@ -30,10 +30,15 @@ input {
   border-radius: 6px;
   padding: 5px;
 }
+.labala {
+  background-color: #728EAF;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
 .container {
   border-radius: 10px;
-  background-color: rgb(233, 243, 252);
-  margin: 10px;
+  background-color: rgb(221, 229, 237);
   padding: 20px;
   width: 100%;
 }
@@ -62,12 +67,13 @@ table {
   thead {
     background-color: #728EAF;
     color: white;
+    
   }
   th, td {
     padding: 8px;
     text-align: left;
     width: 100px;
-    max-width: 100px; 
+    max-width: 200px; 
     overflow: hidden; 
     text-overflow: ellipsis; 
     white-space: nowrap;

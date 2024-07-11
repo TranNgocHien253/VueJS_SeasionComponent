@@ -52,13 +52,13 @@
               </div>
             </div>
             <div class="form-actions">
+              <button type="button" class="download-btn" @click="downloadPokemonSprite">Download</button>
               <button type="button" class="cancelModel" @click="closeModal">Hủy</button>
               <button type="submit">Lưu</button>
             </div>
           </div>
         </form>
       </div>
-
     </div>
   </div>
 </template>
@@ -76,9 +76,36 @@ const emit = defineEmits(['close']);
 const closeModal = () => {
   emit('close');
 };
+
+const downloadPokemonSprite = async () => {
+  try {
+    if (!props.pokemon.id) {
+      console.error('Pokemon ID not found.');
+      return;
+    }
+    let apiUrl = `https://api.vandvietnam.com/api/pokemon-api/pokemons/${props.pokemon.id}/sprite`;
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error('Failed to download sprite');
+    }
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = url;
+    a.download = `pokemon-${props.pokemon.id}.png`;
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+};
 </script>
 
 <style scoped>
+
 .modal {
   display: block; 
   position: fixed; 

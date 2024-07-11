@@ -9,7 +9,10 @@ export const filterName = ref('');
 export const types = ref([]);
 export const currentPage = ref([]);
 
-
+const formatDateTime = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleString();
+  };
 
 export const getNewToDo = async () => {
     try {
@@ -24,14 +27,15 @@ export const getNewToDo = async () => {
         if (selectedCount.value) {
             apiUrl += `&page[size]=${selectedCount.value}`
         }
-        // if (currentPage.value) {
-        //     apiUrl += `page[number]=${encodeURIComponent(currentPage.value)}`
-        // }
 
         const response = await fetch(apiUrl);
         const data = await response.json();
         // const meta = await response.json();
-        listTable.value = data.data;
+        listTable.value = data.data.map(pokemon => ({
+        ...pokemon,
+        created_at: formatDateTime(pokemon.created_at),
+        updated_at: formatDateTime(pokemon.updated_at)
+        }));
         listTable1.value = data.meta;
         // console.log(listTable1);
         console.log(currentPage.value);

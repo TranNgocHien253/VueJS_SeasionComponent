@@ -23,7 +23,6 @@
 <script setup>
 import { inject, Transition, ref } from "vue";
 const emit = defineEmits(["increase", "increase-by-two-times", "increase-by"]);
-
 // Sử dụng yêu cầu tĩnh
 // const imageProduct = ref(new URL('@/assets/image/product(1).jpg', import.meta.url).href);
 const { locale } = inject("locale");

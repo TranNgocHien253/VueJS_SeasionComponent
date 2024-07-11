@@ -17,17 +17,20 @@
         <button @click="submitSearch" style="background-color: rgb(3, 3, 184); color: aliceblue;">Tìm kiếm</button>
       </div>
     </div>
-    <div class="hienthiCount">
-      <p>show</p>
-      <select id="count" v-model="selectedCount" @change="submitSearch">
-        <option v-for="x in [5, 10, 20, 30, 50]" :key="x">{{ x }}</option>
-      </select>
+    <div class="container">
+    <div class="labala">
+      <div class="hienthiCount">
+        <p>show</p>
+        <select id="count" v-model="selectedCount" @change="submitSearch">
+          <option v-for="x in [5, 10, 20, 30, 50]" :key="x">{{ x }}</option>
+        </select>
+      </div>
     </div>
     <div class="list">
       <table>
         <thead>
           <tr>
-            <th>No</th>
+            <th style="border-radius: 10px 0 0 0; text-align: center;">No</th>
             <th>Name</th>
             <th>Total</th>
             <th>HP</th>
@@ -37,12 +40,12 @@
             <th>Sp Defense</th>
             <th>Speed</th>
             <th>Create At</th>
-            <th>Update At</th>
+            <th style="border-radius: 0 10px 0 0;">Update At</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="pokemon in filteredPokemons" :key="pokemon.number" @click="showModal(pokemon)">
-            <td>{{ pokemon.number }}</td>
+            <td style="text-align: center;">{{ pokemon.number }}</td>
             <td>{{ pokemon.name }}</td>
             <td>{{ pokemon.total }}</td>
             <td>{{ pokemon.hp }}</td>
@@ -57,6 +60,7 @@
         </tbody>
       </table>
     </div>
+  </div>
     <!-- Phân trang -->
     <ModelPokemon :isVisible="isModalVisible" :pokemon="selectedPokemon" @close="isModalVisible = false" />
   </div>
@@ -80,5 +84,9 @@ const isModalVisible = ref(false);
 const showModal = (pokemon) => {
   selectedPokemon.value = pokemon;
   isModalVisible.value = true;
+};
+const formatDateTime = (dateString) => {
+  const date = new Date(dateString);
+  return date.toLocaleString();
 };
 </script>
