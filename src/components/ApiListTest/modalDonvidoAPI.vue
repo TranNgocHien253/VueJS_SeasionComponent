@@ -98,6 +98,7 @@ const downloadPokemonSprite = async () => {
     a.click();
     window.URL.revokeObjectURL(url);
     document.body.removeChild(a);
+    alert('successful!')
   } catch (error) {
     console.error('Error:', error);
   }
