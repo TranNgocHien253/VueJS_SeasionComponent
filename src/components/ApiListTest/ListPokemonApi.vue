@@ -27,10 +27,18 @@
       </div>
     </div>
     <div class="list">
+      
+      
       <table>
         <thead>
           <tr>
-            <th style="border-radius: 10px 0 0 0; text-align: center;">No</th>
+            <th style="border-radius: 10px 0 0 0; text-align: center;">
+              No
+              <span @click="sortedPokemons">
+                <span v-if="sortOrder === 'asc'">▼</span>
+                <span v-if="sortOrder === 'desc'">▲</span>
+              </span>
+            </th>
             <th>Name</th>
             <th>Total</th>
             <th>HP</th>
@@ -67,7 +75,7 @@
 </template>
 
 <script setup>
-import { selectedCount, filterName, filterType, types, submitSearch, filteredPokemons } from './ListPokemonApi.js';
+import { selectedCount, filterName, filterType, types, submitSearch, filteredPokemons, sortedPokemons, sortOrder } from './ListPokemonApi.js';
 import '@/components/ApiListTest/ListPokemonApi.css';
 const resetFilters = () => {
   filterType.value = '';
@@ -85,8 +93,8 @@ const showModal = (pokemon) => {
   selectedPokemon.value = pokemon;
   isModalVisible.value = true;
 };
-const formatDateTime = (dateString) => {
-  const date = new Date(dateString);
-  return date.toLocaleString();
-};
+// const formatDateTime = (dateString) => {
+//   const date = new Date(dateString);
+//   return date.toLocaleString();
+// };
 </script>
