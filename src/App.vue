@@ -63,7 +63,7 @@ import ErrorComponent from "./components/ErrorComponent.vue";
         <template #increaseByTwoTimes> <span>Increase By Two Times</span></template>
         <template #increaseBy> <span>Increase By</span></template>
       </button-count> -->
-      <ComponentA />
+      <!-- <ComponentA /> -->
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <!--<RouterLink to="/about">About</RouterLink>
