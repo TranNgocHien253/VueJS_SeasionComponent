@@ -23,6 +23,7 @@
         <option v-for="x in [5, 10, 20, 30, 50]" :key="x">{{ x }}</option>
       </select>
     </div>
+    <div class="container">
     <div class="list">
       <table>
         <thead>
@@ -32,12 +33,12 @@
               <span v-show="sortOrder === 'desc'" @click="sortPokemons('number')">▲</span>
             </th>
             <th>Name
-              <span v-if="sortOrder === 'asc'" @click="sortPokemons('number')">▼</span>
-              <span v-show="sortOrder === 'desc'" @click="sortPokemons('number')">▲</span>
+              <span v-if="sortOrder === 'asc'" @click="sortPokemons('name')">▼</span>
+              <span v-show="sortOrder === 'desc'" @click="sortPokemons('name')">▲</span>
             </th>
             <th>Total
-              <span v-if="sortOrder === 'asc'" @click="sortPokemons('number')">▼</span>
-              <span v-show="sortOrder === 'desc'" @click="sortPokemons('number')">▲</span>
+              <span v-if="sortOrder === 'asc'" @click="sortPokemons('total')">▼</span>
+              <span v-show="sortOrder === 'desc'" @click="sortPokemons('total')">▲</span>
             </th>
             <th>HP</th>
             <th>Attack</th>
@@ -68,7 +69,7 @@
     </div>
     <!-- Phân trang -->
     <ModelPokemon :isVisible="isModalVisible" :pokemon="selectedPokemon" @close="isModalVisible = false" />
-  </div>
+  </div></div>
 </template>
 
 <script setup>

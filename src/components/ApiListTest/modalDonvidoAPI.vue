@@ -98,7 +98,7 @@ const downloadPokemonSprite = async () => {
     a.click();
     window.URL.revokeObjectURL(url);
     document.body.removeChild(a);
-    alert('successful!')
+    // alert('successful!')
   } catch (error) {
     console.error('Error:', error);
   }
@@ -106,52 +106,32 @@ const downloadPokemonSprite = async () => {
 </script>
 
 <style scoped>
-
+/* Modal styles */
 .modal {
-  display: block; 
-  position: fixed; 
-  z-index: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
   left: 0;
   top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: hidden; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4); 
-}
-.contentND {
-  padding: 20px;
-}
-.col1 {
-  padding: 20px;
-  width: 200px;
-}
-.modal-content {
-  background-color: #fefefe;
-  margin: 10% auto; 
-  padding: 20px;
-  border: 1px solid #888;
-  border-radius: 10px;
-  width: 50%;
-  animation: Upmodal .3s;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-@keyframes Downmodal {
-  0% {
-    transform: translateY(0%);
-  }
-  100% {
-    transform: translateY(100%);
-  }
-}
-@keyframes Upmodal {
-  
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  max-height: 90vh; 
+  overflow-y: auto; 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .close {
@@ -159,32 +139,25 @@ const downloadPokemonSprite = async () => {
   float: right;
   font-size: 28px;
   font-weight: bold;
-  margin-right: 10px;
 }
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: #000;
   text-decoration: none;
   cursor: pointer;
 }
+
 .form-body {
-  margin: 40px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  height: 300px;
+  gap: 1rem;
 }
 
 .form-group-cha {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
 
 .form-group {
@@ -192,30 +165,54 @@ const downloadPokemonSprite = async () => {
   flex-direction: column;
 }
 
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
 .inputModel {
-  width: 100%;
-  padding: 5px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.inputModel:disabled {
+  background-color: #e9ecef;
 }
 
 .form-actions {
   display: flex;
-  justify-content: flex-end;
-  gap: 5px;
+  justify-content: end;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.download-btn {
+  background-color: rgba(19, 38, 245, 0.7);
+  border-radius: 30px;
+  color: white;
 }
 
 .cancelModel {
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  padding: 5px 10px;
-  cursor: pointer;
+  background-color: #dc3546cb;
+  border-radius: 30px;
+  color: white;
 }
 
 button[type="submit"] {
-  background-color: #007bff;
+  background-color: #28a746bc;
+  border-radius: 30px;
   color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
 }
 
 </style>

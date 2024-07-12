@@ -111,7 +111,9 @@ th input[type="checkbox"] {
   border-radius: 4px;
   outline: none;
 }
-
+span {
+  cursor: pointer;
+}
 .pagination button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
