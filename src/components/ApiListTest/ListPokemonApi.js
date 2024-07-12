@@ -14,14 +14,17 @@ export const sortOrder = ref('asc');
 
 export const getNewToDo = async () => {
     try {
-        // let apiUrl = 'https://api.vandvietnam.com/api/pokemon-api/pokemons?page[number]=1&page[size]=10&sort=number&filter[type]=1';
-        let apiUrl = `https://api.vandvietnam.com/api/pokemon-api/pokemons?page[number]=${currentPage.value}&page[size]=${selectedCount.value}&sort=${sortBy.value}&order=${sortOrder.value}`;
-                      //https://api.vandvietnam.com/api/pokemon-api/pokemons?page[number]=${currentPage.value} 
+        let apiUrl = `https://api.vandvietnam.com/api/pokemon-api/pokemons?page[number]=${currentPage.value}&page[size]=${selectedCount.value}&sort=number&order=${sortOrder.value}`;
+                //https://api.vandvietnam.com/api/pokemon-api/pokemons?page[number]=${currentPage.value} 
+        //let apiUrl = https://api.vandvietnam.com/api/pokemon-api/pokemons?page[number]=${currentPage.value}&page[size]=${selectedCount.value}&sort=${sortOrder.value === 'asc' ? '' : '-'}${sortBy.value};
         if (filterName.value) {
-            apiUrl += `&filter[name]=${filterName.value}`;
+        apiUrl += `&filter[name]=${filterName.value}`;
         }
         if (filterType.value) {
-            apiUrl += `&filter[type]=${filterType.value}`
+        apiUrl += `&filter[type]=${filterType.value}`
+        }
+        if (sortOrder.value && sortBy.value) {
+        apiUrl += `&sort=${sortOrder.value === 'asc' ? '' : '-'}${sortBy.value}`
         }
         // if (selectedCount.value) {
         //     apiUrl += `&page[size]=${selectedCount.value}`

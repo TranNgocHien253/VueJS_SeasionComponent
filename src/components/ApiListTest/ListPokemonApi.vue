@@ -27,14 +27,18 @@
       <table>
         <thead>
           <tr>
-            <th>No
-              <span @click="handleSort('number')">
-                <span v-if="sortOrder === 'asc'">▼</span>
-                <span v-if="sortOrder === 'desc'">▲</span>
-              </span>
+            <th>No<span></span>
+              <span v-if="sortOrder === 'asc'" @click="sortPokemons('number')">▼</span>
+              <span v-show="sortOrder === 'desc'" @click="sortPokemons('number')">▲</span>
             </th>
-            <th>Name</th>
-            <th>Total</th>
+            <th>Name
+              <span v-if="sortOrder === 'asc'" @click="sortPokemons('name')">▼</span>
+              <span v-show="sortOrder === 'desc'" @click="sortPokemons('name')">▲</span>
+            </th>
+            <th>Total
+              <span v-if="sortOrder === 'asc'" @click="sortPokemons('total')">▼</span>
+              <span v-show="sortOrder === 'desc'" @click="sortPokemons('total')">▲</span>
+            </th>
             <th>HP</th>
             <th>Attack</th>
             <th>Defense</th>
