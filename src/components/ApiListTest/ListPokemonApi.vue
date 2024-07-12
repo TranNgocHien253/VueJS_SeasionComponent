@@ -36,60 +36,60 @@
               </span>
             </th>
             <th>Name
-              <span @click="handleSort('name')">
+              <!-- <span @click="handleSort('name')">
+                <span>
+                  {{ sortOrder === 'asc' ? '▼' : '▲' }}
+                </span>
+              </span> -->
+            </th>
+            <th>Total
+              <span @click="handleSort('total')">
                 <span>
                   {{ sortOrder === 'asc' ? '▼' : '▲' }}
                 </span>
               </span>
             </th>
-            <th>Total
-              <!-- <span @click="handleSort('total')">
-                <span>
-                  {{ sortOrder === 'asc' ? '▼' : '▲' }}
-                </span>
-              </span> -->
-            </th>
             <th>HP
-              <!-- <span @click="handleSort('hp')">
+              <span @click="handleSort('hp')">
                 <span>
                   {{ sortOrder === 'asc' ? '▼' : '▲' }}
                 </span>
-              </span> -->
+              </span>
             </th>
             <th>Attack
-              <!-- <span @click="handleSort('attack')">
+              <span @click="handleSort('attack')">
                 <span>
                   {{ sortOrder === 'asc' ? '▼' : '▲' }}
                 </span>
-              </span> -->
+              </span>
             </th>
             <th>Defense
-              <!-- <span @click="handleSort('defense')">
+              <span @click="handleSort('defense')">
                 <span>
                   {{ sortOrder === 'asc' ? '▼' : '▲' }}
                 </span>
-              </span> -->
+              </span>
             </th>
             <th>Sp Atk
-              <!-- <span @click="handleSort('sp_atk')">
+              <span @click="handleSort('sp_atk')">
                 <span>
                   {{ sortOrder === 'asc' ? '▼' : '▲' }}
                 </span>
-              </span> -->
+              </span>
             </th>
             <th>Sp Defense
-              <!-- <span @click="handleSort('sp_def')">
+              <span @click="handleSort('sp_def')">
                 <span>
                   {{ sortOrder === 'asc' ? '▼' : '▲' }}
                 </span>
-              </span> -->
+              </span>
             </th>
             <th>Speed
-              <!-- <span @click="handleSort('speed')">
+              <span @click="handleSort('speed')">
                 <span>
                   {{ sortOrder === 'asc' ? '▼' : '▲' }}
                 </span>
-              </span> -->
+              </span>
             </th>
             <th>Create At
               <!-- <span @click="handleSort('created_at')">
