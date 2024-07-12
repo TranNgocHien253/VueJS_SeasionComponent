@@ -68,12 +68,23 @@
       </table>
     </div>
     <!-- Phân trang -->
+    <!-- <div>
+      <a @click="goToPagePrevious"><<</a>
+      <span>Page {{ currentPage }} of {{ totagPage }}</span>
+      <a @click="goToPageNext">>></a>
+    </div> -->
+    <div class="pagination">
+      <a @click="goToPagePrevious">&lt;&lt;</a>
+      <span>Page {{ currentPage }} of {{ totagPage }}</span>
+      <a @click="goToPageNext">&gt;&gt;</a>
+    </div>
+
     <ModelPokemon :isVisible="isModalVisible" :pokemon="selectedPokemon" @close="isModalVisible = false" />
   </div></div>
 </template>
 
 <script setup>
-import { selectedCount, filterName, filterType, types, submitSearch, filteredPokemons, sortOrder, sortPokemons } from './ListPokemonApi.js';
+import { selectedCount, filterName, filterType, types, submitSearch, filteredPokemons, sortOrder, sortPokemons, currentPage, totagPage } from './ListPokemonApi.js';
 import '@/components/ApiListTest/ListPokemonApi.css';
 const resetFilters = () => {
   filterType.value = '';
@@ -91,7 +102,17 @@ const showModal = (pokemon) => {
   selectedPokemon.value = pokemon;
   isModalVisible.value = true;
 };
-const handleSort = (field) => {
-  sortPokemons(field); 
+const goToPageNext = () => {
+  if (currentPage.value < totagPage.value) {
+    currentPage.value++;
+    submitSearch();
+  }
+};
+
+const goToPagePrevious = () => {
+  if (currentPage.value > 1) {
+    currentPage.value--;
+    submitSearch();
+  }
 };
 </script>

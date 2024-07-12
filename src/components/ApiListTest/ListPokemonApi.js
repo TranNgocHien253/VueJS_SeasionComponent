@@ -7,9 +7,10 @@ export const selectedCount = ref('5');
 export const filterType = ref('');
 export const filterName = ref('');
 export const types = ref([]);
-export const currentPage = ref([]);
+export const currentPage = ref('1');
 export const sortBy = ref('number');
 export const sortOrder = ref('asc');
+export const totagPage = ref('');
 
 
 export const getNewToDo = async () => {
@@ -37,7 +38,7 @@ export const getNewToDo = async () => {
         const data = await response.json();
         // const meta = await response.json();
         listTable.value = data.data;
-        listTable1.value = data.meta;
+        totagPage.value = data.meta.last_page;
         // console.log(listTable1);
         console.log(currentPage.value);
     } catch (e) {
