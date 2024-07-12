@@ -23,7 +23,7 @@ export const getNewToDo = async () => {
         if (filterType.value) {
         apiUrl += `&filter[type]=${filterType.value}`
         }
-        if (sortOrder.value && sortBy.value) {
+        if (sortOrder.value) {
         apiUrl += `&sort=${sortOrder.value === 'asc' ? '' : '-'}${sortBy.value}`
         }
         // if (selectedCount.value) {

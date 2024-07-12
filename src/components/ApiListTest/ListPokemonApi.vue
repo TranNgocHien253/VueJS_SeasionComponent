@@ -32,12 +32,12 @@
               <span v-show="sortOrder === 'desc'" @click="sortPokemons('number')">▲</span>
             </th>
             <th>Name
-              <span v-if="sortOrder === 'asc'" @click="sortPokemons('name')">▼</span>
-              <span v-show="sortOrder === 'desc'" @click="sortPokemons('name')">▲</span>
+              <span v-if="sortOrder === 'asc'" @click="sortPokemons('number')">▼</span>
+              <span v-show="sortOrder === 'desc'" @click="sortPokemons('number')">▲</span>
             </th>
             <th>Total
-              <span v-if="sortOrder === 'asc'" @click="sortPokemons('total')">▼</span>
-              <span v-show="sortOrder === 'desc'" @click="sortPokemons('total')">▲</span>
+              <span v-if="sortOrder === 'asc'" @click="sortPokemons('number')">▼</span>
+              <span v-show="sortOrder === 'desc'" @click="sortPokemons('number')">▲</span>
             </th>
             <th>HP</th>
             <th>Attack</th>
