@@ -7,7 +7,7 @@ export const selectedCount = ref('5');
 export const filterType = ref('');
 export const filterName = ref('');
 export const types = ref([]);
-export const currentPage = ref([]);
+export const currentPage = ref(1);
 export const sortBy = ref('number');
 export const sortOrder = ref('asc');
 
@@ -15,13 +15,17 @@ export const sortOrder = ref('asc');
 export const getNewToDo = async () => {
     try {
         // let apiUrl = 'https://api.vandvietnam.com/api/pokemon-api/pokemons?page[number]=1&page[size]=10&sort=number&filter[type]=1';
-        let apiUrl = `https://api.vandvietnam.com/api/pokemon-api/pokemons?page[number]=${currentPage.value}&page[size]=${selectedCount.value}&sort=${sortBy.value}&order=${sortOrder.value}`;
-                      //https://api.vandvietnam.com/api/pokemon-api/pokemons?page[number]=${currentPage.value} 
+        let apiUrl = `https://api.vandvietnam.com/api/pokemon-api/pokemons?page[number]=${currentPage.value}&page[size]=${selectedCount.value}&sort=number&order=${sortOrder.value}`;
+                    //https://api.vandvietnam.com/api/pokemon-api/pokemons?page[number]=${currentPage.value} 
+        //let apiUrl = https://api.vandvietnam.com/api/pokemon-api/pokemons?page[number]=${currentPage.value}&page[size]=${selectedCount.value}&sort=${sortOrder.value === 'asc' ? '' : '-'}${sortBy.value};
         if (filterName.value) {
             apiUrl += `&filter[name]=${filterName.value}`;
         }
         if (filterType.value) {
             apiUrl += `&filter[type]=${filterType.value}`
+        }
+        if (sortOrder.value && sortBy.value) {
+            apiUrl += `&sort=${sortOrder.value === 'asc' ? '' : '-'}${sortBy.value}`
         }
         // if (selectedCount.value) {
         //     apiUrl += `&page[size]=${selectedCount.value}`
@@ -58,11 +62,13 @@ export const getFilter = async () => {
 };
 
 export const filteredPokemons = computed(() => {
+
     let filteredList = listTable.value;
     // console.log(filteredList);
 
     return filteredList;
 });
+
 export const filteredPokemonsmeta = computed(() => {
     let filteredList1 = listTable1.value;
     // console.log(filteredList1);
@@ -86,9 +92,8 @@ export const sortPokemons = async (field) => {
       sortOrder.value = 'asc';
   }
 
-  await getNewToDo(); // Sử dụng hàm getNewToDo1 để áp dụng sắp xếp mới
+  await getNewToDo();
 };
-
 // Run getNewToDo and getFilter when this module is imported
 getNewToDo();
 getFilter();
