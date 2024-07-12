@@ -17,28 +17,25 @@
         <button @click="submitSearch" style="background-color: rgb(3, 3, 184); color: aliceblue;">Tìm kiếm</button>
       </div>
     </div>
+    <div class="container">
     <div class="hienthiCount">
       <p>show</p>
       <select id="count" v-model="selectedCount" @change="submitSearch">
         <option v-for="x in [5, 10, 20, 30, 50]" :key="x">{{ x }}</option>
       </select>
     </div>
-    <div class="container">
     <div class="list">
       <table>
         <thead>
           <tr>
-            <th>No<span></span>
-              <span v-if="sortOrder === 'asc'" @click="sortPokemons('number')">▼</span>
-              <span v-show="sortOrder === 'desc'" @click="sortPokemons('number')">▲</span>
+            <th>No
+              <span :class="{ 'active-sort': sortBy === 'number' && sortOrder === 'desc' }" @click="sortPokemons('number', 'desc')">▼</span>
+              <span @click="sortPokemons('number', 'asc')">▲</span>
             </th>
-            <th>Name
-              <span v-if="sortOrder === 'asc'" @click="sortPokemons('name')">▼</span>
-              <span v-show="sortOrder === 'desc'" @click="sortPokemons('name')">▲</span>
-            </th>
+            <th>Name</th>
             <th>Total
-              <span v-if="sortOrder === 'asc'" @click="sortPokemons('total')">▼</span>
-              <span v-show="sortOrder === 'desc'" @click="sortPokemons('total')">▲</span>
+              <span @click="sortPokemons('total', 'desc')">▼</span>
+              <span @click="sortPokemons('total', 'asc')">▲</span>
             </th>
             <th>HP</th>
             <th>Attack</th>
@@ -84,7 +81,7 @@
 </template>
 
 <script setup>
-import { selectedCount, filterName, filterType, types, submitSearch, filteredPokemons, sortOrder, sortPokemons, currentPage, totagPage } from './ListPokemonApi.js';
+import { selectedCount, filterName, filterType, types, submitSearch, filteredPokemons, sortPokemons, currentPage, totagPage, selectedPokemon, isModalVisible, showModal, goToPageNext, goToPagePrevious, sortBy, sortOrder } from './ListPokemonApi.js';
 import '@/components/ApiListTest/ListPokemonApi.css';
 const resetFilters = () => {
   filterType.value = '';
@@ -92,27 +89,7 @@ const resetFilters = () => {
   submitSearch();
 };
 import ModelPokemon from './modalDonvidoAPI.vue';
-import { ref } from 'vue';
 
 
-const selectedPokemon = ref({});
-const isModalVisible = ref(false);
 
-const showModal = (pokemon) => {
-  selectedPokemon.value = pokemon;
-  isModalVisible.value = true;
-};
-const goToPageNext = () => {
-  if (currentPage.value < totagPage.value) {
-    currentPage.value++;
-    submitSearch();
-  }
-};
-
-const goToPagePrevious = () => {
-  if (currentPage.value > 1) {
-    currentPage.value--;
-    submitSearch();
-  }
-};
 </script>

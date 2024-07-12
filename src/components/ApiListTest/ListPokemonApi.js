@@ -27,12 +27,6 @@ export const getNewToDo = async () => {
         if (sortOrder.value) {
         apiUrl += `&sort=${sortOrder.value === 'asc' ? '' : '-'}${sortBy.value}`
         }
-        // if (selectedCount.value) {
-        //     apiUrl += `&page[size]=${selectedCount.value}`
-        // }
-        // if (currentPage.value) {
-        //     apiUrl += `page[number]=${encodeURIComponent(currentPage.value)}`
-        // }
 
         const response = await fetch(apiUrl);
         const data = await response.json();
@@ -82,17 +76,31 @@ export const submitSearch = async () => {
 };
 
 
-export const sortPokemons = async (field) => {
-  if (sortBy.value === field) {
-      sortOrder.value = sortOrder.value === 'asc' ? 'desc' : 'asc';
-  } else {
-      sortBy.value = field;
-      sortOrder.value = 'asc';
-  }
+export const sortPokemons = async (field, order) => {
+    sortBy.value = field;
+    sortOrder.value = order;
+    await getNewToDo();
+};
+export const selectedPokemon = ref({});
+export const isModalVisible = ref(false);
 
-  await getNewToDo(); // Sử dụng hàm getNewToDo1 để áp dụng sắp xếp mới
+export const showModal = (pokemon) => {
+  selectedPokemon.value = pokemon;
+  isModalVisible.value = true;
+};
+export const goToPageNext = () => {
+  if (currentPage.value < totagPage.value) {
+    currentPage.value++;
+    submitSearch();
+  }
 };
 
+export const goToPagePrevious = () => {
+  if (currentPage.value > 1) {
+    currentPage.value--;
+    submitSearch();
+  }
+};
 // Run getNewToDo and getFilter when this module is imported
 getNewToDo();
 getFilter();
