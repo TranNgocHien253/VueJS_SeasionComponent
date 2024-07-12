@@ -27,7 +27,12 @@
       <table>
         <thead>
           <tr>
-            <th>No</th>
+            <th>No
+              <span @click="handleSort('number')">
+                <span v-if="sortOrder === 'asc'">▼</span>
+                <span v-if="sortOrder === 'desc'">▲</span>
+              </span>
+            </th>
             <th>Name</th>
             <th>Total</th>
             <th>HP</th>
@@ -63,7 +68,7 @@
 </template>
 
 <script setup>
-import { selectedCount, filterName, filterType, types, submitSearch, filteredPokemons } from './ListPokemonApi.js';
+import { selectedCount, filterName, filterType, types, submitSearch, filteredPokemons, sortOrder, sortPokemons } from './ListPokemonApi.js';
 import '@/components/ApiListTest/ListPokemonApi.css';
 const resetFilters = () => {
   filterType.value = '';
@@ -80,5 +85,8 @@ const isModalVisible = ref(false);
 const showModal = (pokemon) => {
   selectedPokemon.value = pokemon;
   isModalVisible.value = true;
+};
+const handleSort = (field) => {
+  sortPokemons(field); 
 };
 </script>

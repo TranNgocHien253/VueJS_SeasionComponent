@@ -8,22 +8,24 @@ export const filterType = ref('');
 export const filterName = ref('');
 export const types = ref([]);
 export const currentPage = ref([]);
-
+export const sortBy = ref('number');
+export const sortOrder = ref('asc');
 
 
 export const getNewToDo = async () => {
     try {
-        let apiUrl = 'https://api.vandvietnam.com/api/pokemon-api/pokemons?page[number]=1&page[size]=10&sort=number&filter[type]=1';
-
+        // let apiUrl = 'https://api.vandvietnam.com/api/pokemon-api/pokemons?page[number]=1&page[size]=10&sort=number&filter[type]=1';
+        let apiUrl = `https://api.vandvietnam.com/api/pokemon-api/pokemons?page[number]=${currentPage.value}&page[size]=${selectedCount.value}&sort=${sortBy.value}&order=${sortOrder.value}`;
+                      //https://api.vandvietnam.com/api/pokemon-api/pokemons?page[number]=${currentPage.value} 
         if (filterName.value) {
             apiUrl += `&filter[name]=${filterName.value}`;
         }
         if (filterType.value) {
             apiUrl += `&filter[type]=${filterType.value}`
         }
-        if (selectedCount.value) {
-            apiUrl += `&page[size]=${selectedCount.value}`
-        }
+        // if (selectedCount.value) {
+        //     apiUrl += `&page[size]=${selectedCount.value}`
+        // }
         // if (currentPage.value) {
         //     apiUrl += `page[number]=${encodeURIComponent(currentPage.value)}`
         // }
@@ -76,11 +78,16 @@ export const submitSearch = async () => {
 };
 
 
-// Xử lý phân trang
-// export const goToPage = (page) => {
-//     currentPage.value = page;
-//     getNewToDo();
-// };
+export const sortPokemons = async (field) => {
+  if (sortBy.value === field) {
+      sortOrder.value = sortOrder.value === 'asc' ? 'desc' : 'asc';
+  } else {
+      sortBy.value = field;
+      sortOrder.value = 'asc';
+  }
+
+  await getNewToDo(); // Sử dụng hàm getNewToDo1 để áp dụng sắp xếp mới
+};
 
 // Run getNewToDo and getFilter when this module is imported
 getNewToDo();
