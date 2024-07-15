@@ -121,18 +121,13 @@
               <td>{{ pokemon.sp_atk }}</td>
               <td>{{ pokemon.sp_def }}</td>
               <td>{{ pokemon.speed }}</td>
-              <td>{{ formatDate(pokemon.created_at) }}</td>
+              <td>{{ formatDate(pokemon.created_at) }}</td><!--d/mm/yyyy-->
               <td>{{ formatDate(pokemon.updated_at) }}</td>
             </tr>
           </tbody>
         </table>
       </div>
       <!-- Phân trang -->
-      <!-- <div>
-        <a @click="goToPagePrevious"><<</a>
-        <span>Page {{ currentPage }} of {{ totagPage }}</span>
-        <a @click="goToPageNext">>></a>
-      </div> -->
       <div class="pagination">
         <a @click="goToPagePrevious">&lt;&lt;</a>
         <span>Page {{ currentPage }} of {{ totagPage }}</span>

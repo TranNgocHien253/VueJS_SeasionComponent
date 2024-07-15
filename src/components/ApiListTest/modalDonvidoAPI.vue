@@ -9,7 +9,7 @@
               <div class="form-group">
                 <label for="number">No:</label>
                 <input id="number" type="text" class="inputModel" :value="pokemon.number" disabled />
-              </div>
+              </div><br>
               <div class="form-group">
                 <label for="name">Name:</label>
                 <input id="name" type="text" class="inputModel" v-model="pokemon.name" disabled />

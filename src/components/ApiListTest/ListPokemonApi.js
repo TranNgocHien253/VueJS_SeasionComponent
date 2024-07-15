@@ -1,7 +1,6 @@
 import { ref, computed } from 'vue';
 
 export const listTable = ref([]);
-export const listTable1 = ref([]);
 export const listTableMEta = ref([]);
 export const selectedCount = ref('5');
 export const filterType = ref('');
@@ -44,11 +43,6 @@ export const getNewToDo = async () => {
     }
 };
 
-export const openModal = (pokemon) => {
-    selectedPokemon.value = pokemon;
-};
-
-
 export const getFilter = async () => {
     try {
         const response = await fetch('https://api.vandvietnam.com/api/pokemon-api/types');
@@ -68,13 +62,7 @@ export const formatDate = (dateString) => {
 export const filteredPokemons = computed(() => {
     let filteredList = listTable.value;
     // console.log(filteredList);
-
     return filteredList;
-});
-export const filteredPokemonsmeta = computed(() => {
-    let filteredList1 = listTable1.value;
-    // console.log(filteredList1);
-    return filteredList1;
 });
 
 export const submitSearch = async () => {
