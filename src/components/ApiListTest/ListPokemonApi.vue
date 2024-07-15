@@ -121,8 +121,8 @@
               <td>{{ pokemon.sp_atk }}</td>
               <td>{{ pokemon.sp_def }}</td>
               <td>{{ pokemon.speed }}</td>
-              <td>{{ pokemon.created_at }}</td>
-              <td>{{ pokemon.updated_at }}</td>
+              <td>{{ formatDate(pokemon.created_at) }}</td>
+              <td>{{ formatDate(pokemon.updated_at) }}</td>
             </tr>
           </tbody>
         </table>
@@ -145,7 +145,7 @@
 </template>
 
 <script setup>
-import { selectedCount, filterName, filterType, types, submitSearch, filteredPokemons, sortPokemons, currentPage, totagPage, selectedPokemon, isModalVisible, showModal, goToPageNext, goToPagePrevious, isVisibleAsc, isVisibleDesc, isVisibleAsctotal, isVisibleDesctotal } from './ListPokemonApi.js';
+import { selectedCount, filterName, filterType, types, submitSearch, filteredPokemons, sortPokemons, currentPage, totagPage, selectedPokemon, isModalVisible, showModal, goToPageNext, goToPagePrevious, isVisibleAsc, isVisibleDesc, isVisibleAsctotal, isVisibleDesctotal, formatDate } from './ListPokemonApi.js';
 import '@/components/ApiListTest/ListPokemonApi.css';
 const resetFilters = () => {
   filterType.value = '';

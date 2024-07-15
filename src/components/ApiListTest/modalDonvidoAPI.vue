@@ -44,11 +44,11 @@
               </div>
               <div class="form-group">
                 <label for="created_at">Create At:</label>
-                <input id="created_at" type="text" class="inputModel" :value="pokemon.created_at" disabled />
+                <input id="created_at" type="text" class="inputModel" :value="formatDate(pokemon.created_at)" disabled />
               </div>
               <div class="form-group">
                 <label for="updated_at">Update At:</label>
-                <input id="updated_at" type="text" class="inputModel" :value="pokemon.updated_at" disabled />
+                <input id="updated_at" type="text" class="inputModel" :value="formatDate(pokemon.updated_at)" disabled />
               </div>
             </div>
             <div class="form-actions">
@@ -65,6 +65,7 @@
 
 <script setup>
 import { defineProps, defineEmits } from 'vue';
+import { formatDate } from './ListPokemonApi.js';
 
 const props = defineProps({
   isVisible: Boolean,

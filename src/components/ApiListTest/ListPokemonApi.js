@@ -58,7 +58,13 @@ export const getFilter = async () => {
         console.log('Error fetching types:', e);
     }
 };
-
+export const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
 export const filteredPokemons = computed(() => {
     let filteredList = listTable.value;
     // console.log(filteredList);
