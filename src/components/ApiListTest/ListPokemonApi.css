@@ -123,3 +123,19 @@ th input[type="checkbox"] {
   margin: 0 10px;
   font-size: 1em;
 }
+.thead {
+  display: flex;
+  align-items: center;
+}
+
+.sort {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px; 
+  font-size: 8px;
+}
+
+.sort-icon {
+  cursor: pointer;
+  text-align: center;
+}

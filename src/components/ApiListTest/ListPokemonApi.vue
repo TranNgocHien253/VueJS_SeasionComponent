@@ -28,24 +28,87 @@
       <table>
         <thead>
           <tr>
-            <th>No
-              <span :class="{ 'active-sort': sortBy === 'number' && sortOrder === 'desc' }" @click="sortPokemons('number', 'desc')">▼</span>
-              <span @click="sortPokemons('number', 'asc')">▲</span>
+            <th>
+              <div class="thead">
+                No
+                <div class="sort">
+                  <span  @click="sortPokemons('number', 'desc')" class="sort-icon"><span v-if="isVisibleAsc === true">▲</span></span>
+                  <span  @click="sortPokemons('number', 'asc')" class="sort-icon"><span v-if="isVisibleDesc === true">▼</span></span>
+                </div>
+              </div>
             </th>
-            <th>Name</th>
-            <th>Total
-              <span @click="sortPokemons('total', 'desc')">▼</span>
-              <span @click="sortPokemons('total', 'asc')">▲</span>
+            <th>Name
             </th>
-            <th>HP</th>
-            <th>Attack</th>
-            <th>Defense</th>
-            <th>Sp Atk</th>
-            <th>Sp Defense</th>
-            <th>Speed</th>
+            <th>
+                <div class="thead">
+                  Total
+                <div class="sort">
+                  <span  @click="sortPokemons('total', 'desc')" class="sort-icon">
+                    <span v-if="isVisibleAsctotal === true">▲</span>
+                  </span>
+                  <span  @click="sortPokemons('total', 'asc')" class="sort-icon">
+                    <span v-if="isVisibleDesctotal === true">▼</span>
+                  </span>
+                </div>
+              </div>
+            </th>
+            <th>
+              <div class="thead">
+                HP
+                <!-- <div class="sort">
+                  <span  @click="sortPokemons('hp', 'desc')" class="sort-icon"><span v-if="isVisibleAsc === true">▲</span></span>
+                  <span  @click="sortPokemons('hp', 'asc')" class="sort-icon"><span v-if="isVisibleDesc === true">▼</span></span>
+                </div> -->
+              </div>
+            </th>
+            <th>
+              <div class="thead">
+                Attack
+                <!-- <div class="sort">
+                  <span  @click="sortPokemons('attack', 'desc')" class="sort-icon"><span v-if="isVisibleAsc === true">▲</span></span>
+                  <span  @click="sortPokemons('attack', 'asc')" class="sort-icon"><span v-if="isVisibleDesc === true">▼</span></span>
+                </div> -->
+              </div>
+            </th>
+            <th>
+              <div class="thead">
+                Defense
+                <!-- <div class="sort">
+                  <span  @click="sortPokemons('defense', 'desc')" class="sort-icon"><span v-if="isVisibleAsc === true">▲</span></span>
+                  <span  @click="sortPokemons('defense', 'asc')" class="sort-icon"><span v-if="isVisibleDesc === true">▼</span></span>
+                </div> -->
+              </div>
+            </th>
+            <th>
+              <div class="thead">
+                Sp Atk
+                <!-- <div class="sort">
+                  <span  @click="sortPokemons('sp_atk', 'desc')" class="sort-icon"><span v-if="isVisibleAsc === true">▲</span></span>
+                  <span  @click="sortPokemons('sp_atk', 'asc')" class="sort-icon"><span v-if="isVisibleDesc === true">▼</span></span>
+                </div> -->
+              </div>
+            </th>
+            <th>
+              <div class="thead">
+                Sp Defense
+                <!-- <div class="sort">
+                  <span  @click="sortPokemons('sp_def', 'desc')" class="sort-icon"><span v-if="isVisibleAsc === true">▲</span></span>
+                  <span  @click="sortPokemons('sp_def', 'asc')" class="sort-icon"><span v-if="isVisibleDesc === true">▼</span></span>
+                </div> -->
+              </div>
+            </th>
+            <th>
+              <div class="thead">
+                Speed
+                <!-- <div class="sort">
+                  <span  @click="sortPokemons('speed', 'desc')" class="sort-icon"><span v-if="isVisibleAsc === true">▲</span></span>
+                  <span  @click="sortPokemons('speed', 'asc')" class="sort-icon"><span v-if="isVisibleDesc === true">▼</span></span>
+                </div> -->
+              </div>
+            </th>
             <th>Create At</th>
             <th>Update At</th>
-          </tr>
+        </tr>
         </thead>
         <tbody>
           <tr v-for="pokemon in filteredPokemons" :key="pokemon.number" @click="showModal(pokemon)">
@@ -81,7 +144,7 @@
 </template>
 
 <script setup>
-import { selectedCount, filterName, filterType, types, submitSearch, filteredPokemons, sortPokemons, currentPage, totagPage, selectedPokemon, isModalVisible, showModal, goToPageNext, goToPagePrevious, sortBy, sortOrder } from './ListPokemonApi.js';
+import { selectedCount, filterName, filterType, types, submitSearch, filteredPokemons, sortPokemons, currentPage, totagPage, selectedPokemon, isModalVisible, showModal, goToPageNext, goToPagePrevious, isVisibleAsc, isVisibleDesc, isVisibleAsctotal, isVisibleDesctotal } from './ListPokemonApi.js';
 import '@/components/ApiListTest/ListPokemonApi.css';
 const resetFilters = () => {
   filterType.value = '';
@@ -89,6 +152,8 @@ const resetFilters = () => {
   submitSearch();
 };
 import ModelPokemon from './modalDonvidoAPI.vue';
+
+
 
 
 

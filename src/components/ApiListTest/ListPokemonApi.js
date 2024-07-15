@@ -11,6 +11,10 @@ export const currentPage = ref('1');
 export const sortBy = ref('number');
 export const sortOrder = ref('asc');
 export const totagPage = ref('');
+export const isVisibleAsc = ref(true);
+export const isVisibleDesc = ref(true);
+export const isVisibleAsctotal = ref(true);
+export const isVisibleDesctotal = ref(true);
 
 
 export const getNewToDo = async () => {
@@ -79,6 +83,25 @@ export const submitSearch = async () => {
 export const sortPokemons = async (field, order) => {
     sortBy.value = field;
     sortOrder.value = order;
+        if(sortBy.value === 'number'){
+            if (order === 'asc') {
+                isVisibleAsc.value = true;
+                isVisibleDesc.value = false;
+            } else if (order === 'desc') {
+                isVisibleDesc.value = true;
+                isVisibleAsc.value = false;
+            }
+        } else  if(sortBy.value === 'total'){
+            if (order === 'asc') {
+                isVisibleAsctotal.value = true;
+                isVisibleDesctotal.value = false;
+            } else if (order === 'desc') {
+                isVisibleAsctotal.value = false;
+                isVisibleDesctotal.value = true;
+            }
+        }
+        
+    
     await getNewToDo();
 };
 export const selectedPokemon = ref({});
@@ -101,6 +124,7 @@ export const goToPagePrevious = () => {
     submitSearch();
   }
 };
+
 // Run getNewToDo and getFilter when this module is imported
 getNewToDo();
 getFilter();
