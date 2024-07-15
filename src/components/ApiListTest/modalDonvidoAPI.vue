@@ -12,35 +12,35 @@
               </div>
               <div class="form-group">
                 <label for="name">Name:</label>
-                <input id="name" type="text" class="inputModel" v-model="pokemon.name" />
+                <input id="name" type="text" class="inputModel" v-model="pokemon.name" disabled />
               </div>
               <div class="form-group">
                 <label for="total">Total:</label>
-                <input id="total" type="text" class="inputModel" v-model="pokemon.total" />
+                <input id="total" type="text" class="inputModel" v-model="pokemon.total" disabled />
               </div>
               <div class="form-group">
                 <label for="hp">HP:</label>
-                <input id="hp" type="text" class="inputModel" v-model="pokemon.hp" />
+                <input id="hp" type="text" class="inputModel" v-model="pokemon.hp" disabled />
               </div>
               <div class="form-group">
                 <label for="attack">Attack:</label>
-                <input id="attack" type="text" class="inputModel" v-model="pokemon.attack" />
+                <input id="attack" type="text" class="inputModel" v-model="pokemon.attack" disabled />
               </div>
               <div class="form-group">
                 <label for="defense">Defense:</label>
-                <input id="defense" type="text" class="inputModel" v-model="pokemon.defense" />
+                <input id="defense" type="text" class="inputModel" v-model="pokemon.defense" disabled />
               </div>
               <div class="form-group">
                 <label for="sp_atk">Sp Atk:</label>
-                <input id="sp_atk" type="text" class="inputModel" v-model="pokemon.sp_atk" />
+                <input id="sp_atk" type="text" class="inputModel" v-model="pokemon.sp_atk" disabled />
               </div>
               <div class="form-group">
                 <label for="sp_def">Sp Defense:</label>
-                <input id="sp_def" type="text" class="inputModel" v-model="pokemon.sp_def" />
+                <input id="sp_def" type="text" class="inputModel" v-model="pokemon.sp_def" disabled />
               </div>
               <div class="form-group">
                 <label for="speed">Speed:</label>
-                <input id="speed" type="text" class="inputModel" v-model="pokemon.speed" />
+                <input id="speed" type="text" class="inputModel" v-model="pokemon.speed" disabled />
               </div>
               <div class="form-group">
                 <label for="created_at">Create At:</label>
@@ -54,7 +54,7 @@
             <div class="form-actions">
               <button type="button" class="download-btn" @click="downloadPokemonSprite">Download</button>
               <button type="button" class="cancelModel" @click="closeModal">Hủy</button>
-              <button type="submit">Lưu</button>
+              <!-- <button type="submit">Lưu</button>  -->
             </div>
           </div>
         </form>
@@ -117,7 +117,7 @@ const downloadPokemonSprite = async () => {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto; 
+  overflow: hidden; 
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -132,8 +132,17 @@ const downloadPokemonSprite = async () => {
   overflow-y: auto; 
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: Upmodal .3s;
 }
-
+@keyframes Upmodal {
+  
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
 .close {
   color: #aaa;
   float: right;
