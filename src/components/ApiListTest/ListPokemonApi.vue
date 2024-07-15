@@ -129,18 +129,18 @@
       </div>
       <!-- Phân trang -->
       <div class="pagination">
-        <a @click="goToPagePrevious">&lt;&lt;</a>
+          <button @click="goToPagePrevious1" v-if="currentPage !== 1">Previous</button>
+        <button @click="goToPagePrevious">&lt;&lt;</button>
         <span>Page {{ currentPage }} of {{ totagPage }}</span>
-        <a @click="goToPageNext">&gt;&gt;</a>
+        <button @click="goToPageNext">&gt;&gt;</button>
       </div>
-
     </div>
     <ModelPokemon :isVisible="isModalVisible" :pokemon="selectedPokemon" @close="isModalVisible = false" />
   </div>
 </template>
 
 <script setup>
-import { selectedCount, filterName, filterType, types, submitSearch, filteredPokemons, sortPokemons, currentPage, totagPage, selectedPokemon, isModalVisible, showModal, goToPageNext, goToPagePrevious, isVisibleAsc, isVisibleDesc, isVisibleAsctotal, isVisibleDesctotal, formatDate } from './ListPokemonApi.js';
+import { selectedCount, filterName, filterType, types, submitSearch, filteredPokemons, sortPokemons, currentPage, totagPage, selectedPokemon, isModalVisible, showModal, goToPageNext, goToPagePrevious, isVisibleAsc, isVisibleDesc, isVisibleAsctotal, isVisibleDesctotal, formatDate, goToPagePrevious1 } from './ListPokemonApi.js';
 import '@/components/ApiListTest/ListPokemonApi.css';
 const resetFilters = () => {
   filterType.value = '';

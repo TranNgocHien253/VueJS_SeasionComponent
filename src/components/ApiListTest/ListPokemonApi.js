@@ -6,7 +6,7 @@ export const selectedCount = ref('5');
 export const filterType = ref('');
 export const filterName = ref('');
 export const types = ref([]);
-export const currentPage = ref('1');
+export const currentPage = ref(1);
 export const sortBy = ref('number');
 export const sortOrder = ref('asc');
 export const totagPage = ref('');
@@ -116,7 +116,9 @@ export const goToPagePrevious = () => {
     submitSearch();
   }
 };
-
+export const goToPagePrevious1 = () => {
+    currentPage.value = 1;submitSearch();
+  };
 // Run getNewToDo and getFilter when this module is imported
 getNewToDo();
 getFilter();
