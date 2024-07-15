@@ -83,25 +83,23 @@ export const submitSearch = async () => {
 export const sortPokemons = async (field, order) => {
     sortBy.value = field;
     sortOrder.value = order;
-        if(sortBy.value === 'number'){
-            if (order === 'asc') {
-                isVisibleAsc.value = true;
-                isVisibleDesc.value = false;
-            } else if (order === 'desc') {
-                isVisibleDesc.value = true;
-                isVisibleAsc.value = false;
-            }
-        } else  if(sortBy.value === 'total'){
-            if (order === 'asc') {
-                isVisibleAsctotal.value = true;
-                isVisibleDesctotal.value = false;
-            } else if (order === 'desc') {
-                isVisibleAsctotal.value = false;
-                isVisibleDesctotal.value = true;
-            }
+    if(sortBy.value === 'number'){
+        if (order === 'asc') {
+            isVisibleAsc.value = true;
+            isVisibleDesc.value = false;
+        } else if (order === 'desc') {
+            isVisibleDesc.value = true;
+            isVisibleAsc.value = false;
         }
-        
-    
+    } else  if(sortBy.value === 'total'){
+        if (order === 'asc') {
+            isVisibleAsctotal.value = true;
+            isVisibleDesctotal.value = false;
+        } else if (order === 'desc') {
+            isVisibleAsctotal.value = false;
+            isVisibleDesctotal.value = true;
+        }
+    }
     await getNewToDo();
 };
 export const selectedPokemon = ref({});
