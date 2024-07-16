@@ -136,6 +136,12 @@ nav a:first-of-type {
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
+    min-width: 150px;
+    a {
+      border-bottom: 1px solid var(--color-border);
+      border-left: 1px solid transparent;
+      padding: 5px;
+    }
   }
 }
 </style>

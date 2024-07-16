@@ -132,7 +132,7 @@
         <div class="previous1">
           <button @click="goToPagePrevious1" v-if="currentPage !== 1">Previous</button>
         </div>
-        <div class="previous1">
+        <div>
           <button @click="goToPagePrevious">&lt;&lt;</button>
           <span>Page {{ currentPage }} of {{ totagPage }}</span>
           <button @click="goToPageNext">&gt;&gt;</button>
