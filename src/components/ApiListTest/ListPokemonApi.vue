@@ -5,14 +5,14 @@
         <p>Tên</p>
         <input v-model="filterName" placeholder="Enter Pokémon Name" />
       </div>
-      <div class="form-group" style="margin-left: 30px;">
+      <div class="form-group">
         <p>Mã</p>
         <select v-model="filterType" style="margin-left: 0;">
           <option value="">All</option>
           <option v-for="type in types" :key="type.id" :value="type.id">{{ type.name }}</option>
         </select>
       </div>
-      <div class="form-group" style="margin-top: 25px;">
+      <div class="form-group" >
         <button @click="resetFilters">Đặt lại</button>
         <button @click="submitSearch" style="background-color: rgb(3, 3, 184); color: aliceblue;">Tìm kiếm</button>
       </div>
@@ -48,7 +48,7 @@
                     </span>
                     <span  @click="sortPokemons('total', 'asc')" class="sort-icon">
                       <span v-if="isVisibleDesctotal === true">▼</span>
-                    </span>
+                    </span> 
                   </div>
                 </div>
               </th>
@@ -129,10 +129,14 @@
       </div>
       <!-- Phân trang -->
       <div class="pagination">
+        <div class="previous1">
           <button @click="goToPagePrevious1" v-if="currentPage !== 1">Previous</button>
-        <button @click="goToPagePrevious">&lt;&lt;</button>
-        <span>Page {{ currentPage }} of {{ totagPage }}</span>
-        <button @click="goToPageNext">&gt;&gt;</button>
+        </div>
+        <div class="previous1">
+          <button @click="goToPagePrevious">&lt;&lt;</button>
+          <span>Page {{ currentPage }} of {{ totagPage }}</span>
+          <button @click="goToPageNext">&gt;&gt;</button>
+        </div>
       </div>
     </div>
     <ModelPokemon :isVisible="isModalVisible" :pokemon="selectedPokemon" @close="isModalVisible = false" />
