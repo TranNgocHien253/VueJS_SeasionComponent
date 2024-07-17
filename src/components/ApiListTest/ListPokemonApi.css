@@ -1,0 +1,317 @@
+.hienthiCount {
+  display: flex;
+  margin: 10px;
+}
+.div {
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  margin: 20px 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0px;
+}
+.Search {
+  background-color: #728eaf;
+  margin-bottom: 10px;
+  padding: 20px;
+  display: block;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  color: #ffffff;
+  .form-group {
+    margin: 0px;
+    margin-bottom: 10px;
+    button {
+      margin-left: 0;
+      margin-right: 20px;
+      margin-bottom: 5px;
+    }
+    @media (max-width: 600px) {
+      button {
+        width: 100%;
+      }
+      input {
+        width: 100%;
+      }
+      select {
+        width: 100%;
+      }
+    }
+  }
+}
+.form-group {
+  margin: 10px;
+}
+button {
+  border-radius: 30px;
+  background-color: rgb(255, 255, 255);
+  margin-left: 20px;
+  padding: 5px 20px 5px 20px;
+}
+input {
+  border-radius: 6px;
+  padding: 5px;
+}
+.labala {
+  background-color: #728eaf;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.container {
+  border-radius: 10px;
+  background-color: rgb(221, 229, 237);
+  padding: 20px;
+  width: 100%;
+}
+select {
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  margin-left: 20px;
+  padding: 5px 20px 5px 20px;
+}
+.hienThi {
+  display: flex;
+  margin-bottom: 20px;
+}
+.hienthiEnd {
+  margin-left: auto;
+}
+.list {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  white-space: nowrap;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+thead {
+  background-color: #728eaf;
+  color: white;
+}
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  width: 100px;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+tbody tr:nth-child(even) {
+  background-color: #ecf1ff;
+}
+tbody tr:hover {
+  background-color: #dadada;
+}
+th input[type='checkbox'] {
+  margin: auto;
+  display: block;
+}
+.checkbox {
+  margin-top: 15px;
+  margin-left: 15px;
+}
+.checkboxAll {
+  margin-top: 15px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin: 10px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  margin: 0;
+  text-decoration: none;
+  color: #007bff;
+  border: 1px solid #dee2e600;
+  border-radius: 40%;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  background-color: #dadada09;
+}
+
+.pagination button:hover {
+  background-color: #007bff53;
+  color: #fff;
+}
+
+.pagination span {
+  margin: 0 10px;
+  font-size: 1em;
+}
+.thead {
+  display: flex;
+  align-items: center;
+}
+.sort {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+  font-size: 8px;
+}
+.sort-icon {
+  cursor: pointer;
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  .hienthiCount {
+    display: flex;
+    margin: 10px;
+  }
+  .div {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    margin: 20px 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  .Search {
+    background-color: #728eaf;
+    margin-bottom: 10px;
+    padding: 20px;
+    display: flex;
+    border-radius: 10px;
+    color: #ffffff;
+    button {
+      margin-top: 25px;
+    }
+    .form-group {
+      margin-right: 20px;
+    }
+  }
+  button {
+    border-radius: 30px;
+    background-color: rgb(255, 255, 255);
+    margin-left: 20px;
+    padding: 5px 20px 5px 20px;
+  }
+  input {
+    border-radius: 6px;
+    padding: 5px;
+  }
+  .labala {
+    background-color: #728eaf;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  .container {
+    border-radius: 10px;
+    background-color: rgb(221, 229, 237);
+    padding: 20px;
+    width: 100%;
+  }
+  select {
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    margin-left: 20px;
+    padding: 5px 20px 5px 20px;
+  }
+  .hienThi {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  .hienthiEnd {
+    margin-left: auto;
+  }
+  .list {
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    white-space: nowrap;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+  thead {
+    background-color: #728eaf;
+    color: white;
+  }
+  th,
+  td {
+    padding: 8px;
+    text-align: left;
+    width: 100px;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #ecf1ff;
+  }
+  tbody tr:hover {
+    background-color: #dadada;
+  }
+  th input[type='checkbox'] {
+    margin: auto;
+    display: block;
+  }
+  .checkbox {
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+  .checkboxAll {
+    margin-top: 15px;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .pagination button {
+    padding: 5px 10px;
+    margin: 0;
+    text-decoration: none;
+    color: #007bff;
+    border: 1px solid #dee2e600;
+    border-radius: 40%;
+    cursor: pointer;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+    background-color: #dadada09;
+  }
+
+  .pagination button:hover {
+    background-color: #007bff53;
+    color: #fff;
+  }
+
+  .pagination span {
+    margin: 0 10px;
+    font-size: 1em;
+  }
+  .thead {
+    display: flex;
+    align-items: center;
+  }
+
+  .sort {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+    font-size: 8px;
+  }
+
+  .sort-icon {
+    cursor: pointer;
+    text-align: center;
+  }
+}
