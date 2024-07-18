@@ -12,9 +12,13 @@
 <style scoped>
 .containerWrapper {
   background-color: blueviolet;
+  background-size: cover;
+  /* background-image: url('@/assets/image/slide1.jpg'); */
+  background-position: center;
   height: 60vh;
   width: 100%;
   padding: 20px;
+  font-size: 40px;
 }
 
 .translateleft {
@@ -31,12 +35,18 @@
 
   h4 {
     color: yellow;
-    margin-top: 150px;
+    margin-top: 80px;
   }
 
   h1 {
-    font-size: 60px;
     color: white;
+  }
+}
+
+@media (max-width: 600px) {
+  .containerWrapper {
+    font-size: 25px;
+    transition: font-size .3s;
   }
 }
 </style>

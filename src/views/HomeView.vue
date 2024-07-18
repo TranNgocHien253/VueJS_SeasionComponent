@@ -1,9 +1,13 @@
 <script setup>
 import TheWelcome from '../components/MainWeb/TheWelcome.vue'
-import StartNowWeb from '../components/MainWeb/StartNowWeb.vue'
+import StartNowWeb from '../components/MainWeb/LearnANewLanguage.vue'
 import HighQualityWeb from '../components/MainWeb/HighQuality.vue'
 import OurAllLanguageVideos from '../components/MainWeb/OurAllLanguageVideos.vue'
-
+import BestTranning from '../components/MainWeb/BestTranning.vue'
+import FeaturedCourses from '../components/MainWeb/FeaturedCourses.vue'
+import Events from '../components/MainWeb/EventsPuple.vue'
+import WhatSaysOurStudents from '../components/MainWeb/WhatSaysOurStudents.vue'
+import GetInTouch from '../components/FooterWeb/GetInTouch.vue'
 </script>
 
 <template>
@@ -12,12 +16,24 @@ import OurAllLanguageVideos from '../components/MainWeb/OurAllLanguageVideos.vue
     <div class="containerND">
       <StartNowWeb />
       <HighQualityWeb />
-      <OurAllLanguageVideos />
+    </div>
+    <OurAllLanguageVideos />
+    <div class="containerND">
+      <BestTranning />
+      <FeaturedCourses />
+    </div>
+    <Events />
+    <div class="containerND">
+      <WhatSaysOurStudents />
     </div>
   </main>
+  <footer>
+    <GetInTouch />
+  </footer>
 </template>
 <style scoped>
 .containerND {
-    margin: 0 10%;
+  padding: 0 5%;
 }
+
 </style>

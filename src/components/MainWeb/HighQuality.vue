@@ -1,3 +1,8 @@
+<script setup>
+import image1 from '@/assets/image/slide1.jpg';
+import image2 from '@/assets/image/slide2.jpg';
+</script>
+
 <template>
     <div class="hero-section">
         <div class="hero-content">
@@ -7,41 +12,36 @@
             <button class="appointment-btn">Make Appointment</button>
         </div>
         <div class="hero-images">
-            <div class="img1">
-                <div class="anh1"></div>
-            </div>
-            <div class="img2">
-                <div class="anh2"></div>
-            </div>
+            <img :src="image1" alt="Image 1" class="img1">
+            <img :src="image2" alt="Image 2" class="img2">
         </div>
     </div>
 </template>
+
 <style scoped>
 .hero-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
     padding: 20px;
-    background-color: #f8f9fa;
+    background-color: #ffffff;
 }
 
 .hero-content {
     max-width: 50%;
     flex: 1 1 300px;
     padding: 20px;
+    align-items: start;
+    font-size: 2rem;
 }
 
 .hero-content h1 {
-    font-size: 2.5rem;
     color: #d4af37;
-    /* Màu vàng nhạt */
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .hero-content h2 {
-    font-size: 2rem;
     color: #000;
     font-weight: bold;
     margin-bottom: 10px;
@@ -59,7 +59,6 @@
     padding: 10px 20px;
     color: #d4af37;
     cursor: pointer;
-    border-radius: 10px;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -73,55 +72,46 @@
     flex: 1 1 300px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    gap: 20px;
+    align-items: flex-start;
+    gap: 50px;
 }
 
-.anh1 {
-    width: 400px;
-    height: 250px;
-    background-color: aquamarine;
-}
-
-.anh2 {
-    width: 400px;
-    height: 250px;
-    background-color: aquamarine;
-}
-
-.hero-images .img1 {
+.img1 {
     width: 100%;
+    max-width: 600px;
     height: auto;
     border-radius: 10px;
 }
 
-.img1 {
-    max-width: 90%;
-}
-
 .img2 {
-    max-width: 70%;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin-bottom: 60px;
+    border-radius: 10px;
+    transform: translateX(-50%);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .hero-section {
-        flex-direction: column;
-        align-items: center;
+        display: block;
+        transition: display .3s;
     }
 
-    .hero-content,
+    .hero-content {
+        max-width: 100%;
+        font-size: 1rem;
+        transition: font-size .3s;
+    }
+
     .hero-images {
         max-width: 100%;
+        transition: max-width .3s;
     }
 
-    .hero-images {
-        align-items: center;
+    .img2 {
+        border-radius: 10px;
+        transform: translateX(0);
     }
-
-    .img1, .img2 {
-        width: 100%;
-    }
-
-    
 }
 </style>

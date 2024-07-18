@@ -1,35 +1,45 @@
 <script setup>
 </script>
 <template>
-    <div class="contentOne">
-        <h4>Our All Language Videos</h4>
-        <h1>It is a long established fact that a reader will be distracted by the readable</h1>
-    </div>
-    <div class="readmoreCard">
-        <div class="columCard">
-            <div class="contentCard">
-
-                <div class="circleWave"></div>
-            </div>
-            <button>Read more</button>
+    <div class="pupleOurAll">
+        <div class="contentOne">
+            <h4>Our All Language Videos</h4>
+            <h1>It is a long established fact that a reader will be distracted by the readable</h1>
         </div>
-        <div class="columCard">
-            <div class="contentCard">
-                <img src="" alt="">
-                <div class="circleWave"></div>
+        <div class="readmoreCard">
+            <div class="columCard">
+                <div class="contentCard">
+                    <div class="circleWave"></div>
+                    <p>video 1</p>
+                </div>
             </div>
-            <button>Read more</button>
+            <div class="columCard">
+                <div class="contentCard">
+                    <img src="" alt="">
+                    <div class="circleWave"></div>
+                    <p>video 2</p>
+                </div>
+            </div>
+            <div class="columCard">
+                <div class="contentCard">
+                    <img src="" alt="">
+                    <div class="circleWave"></div>
+                    <p>video 3</p>
+                </div>
+            </div>
         </div>
-        <div class="columCard">
-            <div class="contentCard">
-                <img src="" alt="">
-                <div class="circleWave"></div>
-            </div>
-            <button>Read more</button>
+        <div class="actionRigLef">
+            <button>q</button>
+            <button>p</button>
         </div>
     </div>
 </template>
 <style scoped>
+.pupleOurAll {
+    background-color: #270B60;
+    padding: 0 11%;
+    color: #ffffff;
+}
 .contentOne {
     text-align: left;
     align-content: center;
@@ -53,24 +63,27 @@
 .readmoreCard {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+     gap: 10px;
+     
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-between;
     padding: 20px;
 }
 
 .columCard {
-    flex: 1 1 200px;
+    
+    width: 30%;
     text-align: center;
     box-sizing: border-box;
 }
 
 
 .contentCard {
+    background-image: url('@/assets/image/slide3.jpg');
+    background-size: cover;
     width: 100%;
     height: 200px;
-    background-color: #DBC64C;
-    border-radius: 10px;
+    background-color: #4a483f;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,37 +104,46 @@
 .contentCard p {
     margin: 0;
     font-size: 20px;
-    color: #000;
-    /* Màu chữ */
-}
-
-.contentCard:hover {
-    background-color:  #dbc64c58;
-    transition: background-color 0.5s, color 0.3s;
-}
-
-button {
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid #DBC64C;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-button:hover {
     color: #DBC64C;
 }
 
-/* @media (max-width: 768px) {
-  .columCard {
-    width: calc(50% - 10px); 
-  }
+.contentCard:hover {
+    background-color: #dbc64c58;
+    transition: background-color 0.5s, color 0.3s;
 }
 
-@media (max-width: 480px) {
+.actionRigLef {
+    text-align: center;
+    align-items: center;
+
+    button {
+        background-color: #DBC64C;
+        border: none;
+        margin: 10px;
+        width: 50px;
+        height: 50px;
+        color: #ffffff;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    button:first-child {
+        background-color: #000000;
+    }
+
+    button:hover {
+        background-color: #000000;
+    }
+}
+ 
+@media (max-width: 1024px) {
   .columCard {
-    width: 100%; 
-  }
-} */
+    width: 45%;
+    }
+} 
+@media (max-width: 768px) {
+    .columCard {
+    width: 100%;
+    }
+}
 </style>

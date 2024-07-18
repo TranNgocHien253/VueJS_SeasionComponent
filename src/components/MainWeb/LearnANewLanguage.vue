@@ -42,16 +42,15 @@
   text-align: left;
   align-content: center;
   padding: 20px;
+  font-size: 30px;
 
   h4 {
     color: #DBC64C;
-    font-size: 60px;
     margin-top: 100px;
   }
 
   h1 {
-    font-size: 60px;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
   }
 }
 
@@ -60,17 +59,30 @@
   flex-wrap: wrap;
   gap: 10px;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
   padding: 20px;
 }
 
 .columCard {
-  flex: 1 1 200px;
-  text-align: center;
-  box-sizing: border-box;
+    width: 20%;
+    text-align: center;
+    box-sizing: border-box;
 }
-
-
+@media (max-width: 1444px) {
+    .columCard {
+    width: 30%;
+    }
+}
+@media (max-width: 1024px) {
+  .columCard {
+    width: 45%;
+    }
+} 
+@media (max-width: 768px) {
+    .columCard {
+    width: 100%;
+    }
+}
 .contentCard {
   width: 100%;
   height: 200px;
@@ -118,15 +130,17 @@ button:hover {
   color: #DBC64C;
 }
 
+@media (max-width: 600px) {
+  .contentOne {
+    font-size: 20px;
+    transition: font-size .3s;
+  }
+}
+
 /* @media (max-width: 768px) {
   .columCard {
     width: calc(50% - 10px); 
   }
 }
-
-@media (max-width: 480px) {
-  .columCard {
-    width: 100%; 
-  }
-} */
+*/
 </style>
