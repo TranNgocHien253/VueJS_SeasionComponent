@@ -1,6 +1,5 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 import MenuOinia from './components/menu/MenuOinia.vue'
 </script>
 
@@ -8,10 +7,7 @@ import MenuOinia from './components/menu/MenuOinia.vue'
   <header>
     <div class="whitewrapper">
       <div class="wrapper">
-        <HelloWorld />
-        <nav>
           <MenuOinia />
-        </nav>
       </div>
     </div>
   </header>

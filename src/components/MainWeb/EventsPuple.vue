@@ -122,4 +122,17 @@ p {
     transition: background-color 0.3s, color 0.3s;
     margin-top: 20px;
 }
+
+@media (max-width: 768px) {
+    .background-events {
+    padding: 0;
+}
+    .events-list {
+    display: block;
+} 
+.event-item {
+    width: 100%;
+    margin-bottom: 50px;
+}
+}
 </style>

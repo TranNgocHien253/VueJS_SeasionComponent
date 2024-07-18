@@ -51,12 +51,8 @@ import image1 from '@/assets/image/slide1.jpg';
   width: 150px;
   height: 150px;
   object-fit: cover;
-  margin-right: 20px;
   display: flex;
-  margin-left: -75px;
-  margin-top: 35px;
-  margin-bottom: -35px;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateX(-50%);
   box-shadow: 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -82,5 +78,25 @@ import image1 from '@/assets/image/slide1.jpg';
   transform: translateY(20px);
   color: #DBA64C;
   font-size: 7rem;
+}
+@media (max-width: 768px) {
+  .testimonial-card {
+  display: block;
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.student-image {
+  width: 250px;
+  height: 250px;
+  transform: translateY(0) translateX(0);
+}
+.testimonial-content {
+  padding-left: 0; 
+  padding-top: 30px; 
+  position: relative;
+}
 }
 </style>

@@ -39,6 +39,7 @@
 }
 
 .contact-form {
+    padding-top: 100px;
     max-width: 600px;
     margin: 0 auto 30px;
     text-align: left;
@@ -61,6 +62,7 @@
     background-color: transparent;
     color: #fff;
     font-size: 1rem;
+    outline: none; /* Thêm thuộc tính này */
 }
 
 .contact-form input::placeholder,
@@ -77,7 +79,7 @@
     background-color: transparent;
     border: 2px solid #d4af37;
     color: #d4af37;
-    padding: 10px 20px;
+    padding: 10px 40px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -107,11 +109,6 @@
     display: flex;
     align-items: center;
 }
-/* 
-.contact-info i {
-    margin-right: 10px;
-} */
-
 
 .social-media {
     margin-top: 20px;
@@ -138,4 +135,26 @@
     font-size: 0.9rem;
     color: #666;
 }
+
+@media (max-width: 1042px) {
+    .contact-form {
+        width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footerInFooter p {
+        color: transparent;
+    }
+}
+
 </style>

@@ -3,7 +3,7 @@
 <template>
 
   <div class="contentOne">
-    <h4>language School</h4>
+    <h4>Start Now</h4>
     <h1>Learn a new language</h1>
   </div>
   <div class="readmoreCard">

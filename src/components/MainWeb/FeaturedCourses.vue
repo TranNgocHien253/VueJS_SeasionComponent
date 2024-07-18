@@ -98,7 +98,9 @@
     width: 100%;
 }
 @media (max-width: 768px) {
-    
+    .featured-courses{
+        transition: All 0.3s;
+    }
 .course-item {
     display: block;
     text-align: start;
