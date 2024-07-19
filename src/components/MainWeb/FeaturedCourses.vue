@@ -1,35 +1,28 @@
+<script setup>
+const courses = [
+  { id: 1, name: "Chinese" },
+  { id: 2, name: "English" },
+  { id: 3, name: "French" },
+  { id: 4, name: "German" },
+  { id: 5, name: "Japanese" },
+  { id: 6, name: "Spanish" }
+];
+</script>
+
 <template>
-    <div class="featured-courses">
-        <h2>Featured Courses</h2>
-        <p>It is a long established fact that a reader will be distracted by the readable content.</p>
-        <div class="course-list">
-            <div class="course-item">
-                <span>Chinese</span><div class="line"></div>
-                <button>Language start learn</button>
-            </div>
-            <div class="course-item">
-                <span>English</span><div class="line"></div>
-                <button>Language start learn</button>
-            </div>
-            <div class="course-item">
-                <span>French</span><div class="line"></div>
-                <button>Language start learn</button>
-            </div>
-            <div class="course-item">
-                <span>German</span><div class="line"></div>
-                <button>Language start learn</button>
-            </div>
-            <div class="course-item">
-                <span>Japanese</span><div class="line"></div>
-                <button>Language start learn</button>
-            </div>
-            <div class="course-item">
-                <span>Spanish</span><div class="line"></div>
-                <button>Language start learn</button>
-            </div>
-        </div>
+  <div class="featured-courses">
+    <h2>Featured Courses</h2>
+    <p>It is a long established fact that a reader will be distracted by the readable content.</p>
+    <div class="course-list">
+      <div v-for="course in courses" :key="course.id" class="course-item">
+        <span>{{ course.name }}</span>
+        <div class="line"></div>
+        <button>Language start learn</button>
+      </div>
     </div>
+  </div>
 </template>
+
 <style scoped>
 .featured-courses {
     text-align: center;
@@ -119,5 +112,4 @@
     width: 90%;
 }
 }
-
 </style>

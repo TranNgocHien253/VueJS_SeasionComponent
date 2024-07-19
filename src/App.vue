@@ -23,7 +23,7 @@ html, body {
   width: 100%;
 }
 .whitewrapper {
-  background-color: blueviolet;
+  background-color: #2B004F;
 }
   .wrapper {
     display: flex;

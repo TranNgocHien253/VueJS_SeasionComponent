@@ -1,42 +1,52 @@
 <script setup>
+import image1 from '@/assets/image/slide1.jpg';
+import image2 from '@/assets/image/slide2.jpg';
+import image3 from '@/assets/image/slide3.jpg';
+
+const cards = [
+  {
+    id: 1,
+    imageSrc: image1,
+    text: "Language Chinese"
+  },
+  {
+    id: 2,
+    imageSrc: image2,
+    text: "Language Chinese"
+  },
+  {
+    id: 3,
+    imageSrc: image3,
+    text: "Language Chinese"
+  }
+];
 </script>
+
 <template>
-    <div class="pupleOurAll">
-        <div class="contentOne">
-            <h4>Our All Language Videos</h4>
-            <h1>It is a long established fact that a reader will be distracted by the readable</h1>
-        </div>
-        <div class="readmoreCard">
-            <div class="columCard">
-                <div class="contentCard">
-                    <div class="circleWave"></div>
-                    <p>video 1</p>
-                </div>
-            </div>
-            <div class="columCard">
-                <div class="contentCard">
-                    <img src="" alt="">
-                    <div class="circleWave"></div>
-                    <p>video 2</p>
-                </div>
-            </div>
-            <div class="columCard">
-                <div class="contentCard">
-                    <img src="" alt="">
-                    <div class="circleWave"></div>
-                    <p>video 3</p>
-                </div>
-            </div>
-        </div>
-        <div class="actionRigLef">
-            <button>q</button>
-            <button>p</button>
-        </div>
+  <div class="pupleOurAll">
+    <div class="contentOne">
+      <h4>Our All Language Videos</h4>
+      <h1>It is a long established fact that a reader will be distracted by the readable</h1>
     </div>
+    <div class="readmoreCard">
+      <div v-for="card in cards" :key="card.id" class="columCard">
+        <div class="contentCard">
+          <img :src="card.imageSrc" alt="">
+          <div class="circleWave"></div>
+          <p>{{ card.text }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="actionRigLef">
+      <button>q</button>
+      <button>p</button>
+    </div>
+  </div>
 </template>
+
 <style scoped>
 .pupleOurAll {
-    background-color: #270B60;
+    background-color: #2B004F;
     padding: 0 11%;
     color: #ffffff;
 }
@@ -63,45 +73,57 @@
 .readmoreCard {
     display: flex;
     flex-wrap: wrap;
-     gap: 10px;
-     
+    gap: 10px;
     align-items: flex-start;
     justify-content: space-between;
     padding: 20px;
 }
 
 .columCard {
-    
     width: 30%;
+    opacity: .8;
     text-align: center;
     box-sizing: border-box;
+    position: relative;
+    margin-top: 10px;
 }
-
+.columCard:hover {
+    opacity: 1;
+    
+}
 
 .contentCard {
-    background-image: url('@/assets/image/slide3.jpg');
-    background-size: cover;
     width: 100%;
     height: 200px;
-    background-color: #4a483f;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    box-sizing: border-box;
-    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
 }
 
-
 .contentCard img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contentCard .circleWave {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contentCard p {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     margin: 0;
     font-size: 20px;
     color: #DBC64C;
@@ -115,35 +137,35 @@
 .actionRigLef {
     text-align: center;
     align-items: center;
-
-    button {
-        background-color: #DBC64C;
-        border: none;
-        margin: 10px;
-        width: 50px;
-        height: 50px;
-        color: #ffffff;
-        cursor: pointer;
-        transition: background-color 0.3s, color 0.3s;
-    }
-
-    button:first-child {
-        background-color: #000000;
-    }
-
-    button:hover {
-        background-color: #000000;
-    }
 }
- 
+
+.actionRigLef button {
+    background-color: #DBC64C;
+    border: none;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.actionRigLef button:first-child {
+    background-color: #000000;
+}
+
+.actionRigLef button:hover {
+    background-color: #000000;
+}
+
 @media (max-width: 1024px) {
   .columCard {
     width: 45%;
-    }
+  }
 } 
 @media (max-width: 768px) {
-    .columCard {
+  .columCard {
     width: 100%;
-    }
+  }
 }
 </style>

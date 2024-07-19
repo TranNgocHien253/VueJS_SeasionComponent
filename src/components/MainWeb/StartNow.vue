@@ -1,4 +1,26 @@
 <script setup>
+const cards = [
+  {
+    id: 1,
+    imageSrc: "path/to/image1.jpg",
+    text: "An Easy<br> Study Approach"
+  },
+  {
+    id: 2,
+    imageSrc: "path/to/image2.jpg",
+    text: "An Easy<br> Study Approach"
+  },
+  {
+    id: 3,
+    imageSrc: "path/to/image3.jpg",
+    text: "An Easy<br> Study Approach"
+  },
+  {
+    id: 4,
+    imageSrc: "path/to/image4.jpg",
+    text: "An Easy<br> Study Approach"
+  }
+];
 </script>
 <template>
 
@@ -7,31 +29,10 @@
     <h1>Learn a new language</h1>
   </div>
   <div class="readmoreCard">
-    <div class="columCard">
+    <div v-for="card in cards" :key="card.id" class="columCard">
       <div class="contentCard">
-
-        <p>An Easy<br> Study Approach</p>
-      </div>
-      <button>Read more</button>
-    </div>
-    <div class="columCard">
-      <div class="contentCard">
-        <img src="" alt="">
-        <p>An Easy<br> Study Approach</p>
-      </div>
-      <button>Read more</button>
-    </div>
-    <div class="columCard">
-      <div class="contentCard">
-        <img src="" alt="">
-        <p>An Easy<br> Study Approach</p>
-      </div>
-      <button>Read more</button>
-    </div>
-    <div class="columCard">
-      <div class="contentCard">
-        <img src="" alt="">
-        <p>An Easy<br> Study Approach</p>
+        <!-- <img :src="card.imageSrc" alt=""> -->
+        <p v-html="card.text"></p>
       </div>
       <button>Read more</button>
     </div>

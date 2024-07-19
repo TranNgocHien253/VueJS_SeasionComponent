@@ -1,6 +1,6 @@
 <script setup>
 import TheWelcome from '../components/MainWeb/TheWelcome.vue'
-import StartNowWeb from '../components/MainWeb/LearnANewLanguage.vue'
+import StartNowWeb from '../components/MainWeb/StartNow.vue'
 import HighQualityWeb from '../components/MainWeb/HighQuality.vue'
 import OurAllLanguageVideos from '../components/MainWeb/OurAllLanguageVideos.vue'
 import BestTranning from '../components/MainWeb/BestTranning.vue'

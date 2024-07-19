@@ -1,40 +1,45 @@
 <script setup>
 import image1 from '@/assets/image/slide1.jpg';
 import image2 from '@/assets/image/slide2.jpg';
+
+const events = [
+  {
+    id: 1,
+    image: image1,
+    description: "It is a long established fact that a reader will be distracted by the readable content of a",
+    type: "Live event",
+    date: "04 Nov 2023"
+  },
+  {
+    id: 2,
+    image: image2,
+    description: "It is a long established fact that a reader will be distracted by the readable content of a",
+    type: "Live event",
+    date: "04 Nov 2023"
+  }
+];
 </script>
 
 <template>
-    <div class="background-events">
-        <div class="events-section">
-            <h2>Events</h2>
-            <p>It is a long established fact that a reader will be distracted by the readable content.</p>
-            <div class="events-list">
-                <div class="event-item">
-                    <div class="event-content">
-                        <img :src="image1" alt="Event Image">
-                        <p class="event-description">It is a long established fact that a reader will be distracted by
-                            the readable content of a</p>
-                    </div>
-                    <div class="event-meta">
-                        <span class="event-type">Live event</span>
-                        <span class="event-date">04 Nov 2023</span>
-                    </div>
-                </div>
-                <div class="event-item">
-                    <div class="event-content">
-                        <img :src="image2" alt="Event Image">
-                        <p class="event-description">It is a long established fact that a reader will be distracted by
-                            the readable content of a</p>
-                    </div>
-                    <div class="event-meta">
-                        <span class="event-type">Live event</span>
-                        <span class="event-date">04 Nov 2023</span>
-                    </div>
-                </div>
-            </div>
-            <button class="read-more-btn">Read More</button>
+  <div class="background-events">
+    <div class="events-section">
+      <h2>Events</h2>
+      <p>It is a long established fact that a reader will be distracted by the readable content.</p>
+      <div class="events-list">
+        <div v-for="event in events" :key="event.id" class="event-item">
+          <div class="event-content">
+            <img :src="event.image" alt="Event Image">
+            <p class="event-description">{{ event.description }}</p>
+          </div>
+          <div class="event-meta">
+            <span class="event-type">{{ event.type }}</span>
+            <span class="event-date">{{ event.date }}</span>
+          </div>
         </div>
+      </div>
+      <button class="read-more-btn">Read More</button>
     </div>
+  </div>
 </template>
 
 <style scoped>
@@ -99,8 +104,13 @@ p {
     bottom: 0;
     width: 70%;
     box-sizing: border-box;
+    font-size: 13px;
 }
-
+@media (max-width: 1024px) {
+    .event-description {
+    font-size: 8px;
+}
+}
 .event-meta {
     display: flex;
     justify-content: space-between;
@@ -133,6 +143,10 @@ p {
 .event-item {
     width: 100%;
     margin-bottom: 50px;
+}
+.event-description {
+    
+    font-size: 15px;
 }
 }
 </style>

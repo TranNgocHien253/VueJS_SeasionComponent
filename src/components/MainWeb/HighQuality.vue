@@ -87,6 +87,8 @@ import image2 from '@/assets/image/slide2.jpg';
     width: 100%;
     max-width: 600px;
     height: auto;
+    margin-top: 60px;
+
     margin-bottom: 60px;
     border-radius: 10px;
     transform: translateX(-50%);

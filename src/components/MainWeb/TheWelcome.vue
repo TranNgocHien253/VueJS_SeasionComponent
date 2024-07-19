@@ -11,7 +11,7 @@
 </template>
 <style scoped>
 .containerWrapper {
-  background-color: blueviolet;
+  background-color: #2B004F;
   background-size: cover;
   /* background-image: url('@/assets/image/slide1.jpg'); */
   background-position: center;
