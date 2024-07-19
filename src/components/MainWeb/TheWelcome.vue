@@ -15,7 +15,7 @@
   background-size: cover;
   /* background-image: url('@/assets/image/slide1.jpg'); */
   background-position: center;
-  height: 60vh;
+  height: auto;
   width: 100%;
   padding: 20px;
   font-size: 40px;
@@ -35,7 +35,7 @@
 
   h4 {
     color: yellow;
-    margin-top: 80px;
+    margin-top: 40px;
   }
 
   h1 {
