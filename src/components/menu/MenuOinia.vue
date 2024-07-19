@@ -48,13 +48,13 @@ window.addEventListener('load', handleResize);
         <RouterLink to="/about">Languges</RouterLink>
       </a>
       <a>
-        <RouterLink to="/about">Services</RouterLink>
+        <RouterLink to="/1">Services</RouterLink>
       </a>
       <a>
-        <RouterLink to="/about">Events</RouterLink>
+        <RouterLink to="/2">Events</RouterLink>
       </a>
       <a>
-        <RouterLink to="/about">Contact US</RouterLink>
+        <RouterLink to="/3">Contact US</RouterLink>
       </a>
     </nav>
     <div class="right-menu" v-show="showSearchBox">
@@ -108,7 +108,15 @@ window.addEventListener('load', handleResize);
 .navbar nav a:hover {
   color: #d3b94b;
 }
+nav a.router-link-active {
+  color: #d3b94b;
+  font-weight: bold;
+}
 
+nav a.router-link-exact-active {
+  color: #d3b94b;
+  font-weight: bold;
+}
 .navbar .right-menu {
   display: flex;
   align-items: center;
