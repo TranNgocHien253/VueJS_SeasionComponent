@@ -26,21 +26,22 @@
   align-content: center;
 
   button {
+    font-size: 20px;
     background-color: transparent;
-    border: 2px solid yellow;
-    padding: 5px 10px;
-    color: yellow;
+    border: 2px solid #DBC64C;
+    padding: 5px 20px;
+    color: #DBC64C;
     margin: 50px;
     transition: background-color .3s, color .3s;
   }
 
   button:hover {
-    background-color: #DBC64C;
-    color: #ffffff;
+    background-color: #fcfaf2;
+    color: #DBC64C;
   }
 
   h4 {
-    color: yellow;
+    color: #DBC64C;
     margin-top: 40px;
   }
 

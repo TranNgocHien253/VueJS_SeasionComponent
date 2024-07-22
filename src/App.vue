@@ -5,7 +5,7 @@ import MenuOinia from './components/menu/MenuOinia.vue'
 
 const route = useRoute();
 
-const isHomeRoute = computed(() => route.path === '/');
+const isHomeRoute = computed(() => route.path === '/');//bên menu/MenuOinia có router menu
 </script>
 
 <template>
