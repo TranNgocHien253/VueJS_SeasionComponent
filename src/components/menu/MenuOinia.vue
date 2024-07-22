@@ -45,16 +45,16 @@ window.addEventListener('load', handleResize);
         <RouterLink to="/">Home</RouterLink>
       </a>
       <a>
-        <RouterLink to="/about">Languges</RouterLink>
+        <RouterLink to="/languges">Languges</RouterLink>
       </a>
       <a>
-        <RouterLink to="/1">Services</RouterLink>
+        <RouterLink to="/services">Services</RouterLink>
       </a>
       <a>
-        <RouterLink to="/2">Events</RouterLink>
+        <RouterLink to="/events">Events</RouterLink>
       </a>
       <a>
-        <RouterLink to="/3">Contact US</RouterLink>
+        <RouterLink to="/contastus">Contact US</RouterLink>
       </a>
     </nav>
     <div class="right-menu" v-show="showSearchBox">

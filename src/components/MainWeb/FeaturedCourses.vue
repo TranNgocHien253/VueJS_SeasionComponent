@@ -48,7 +48,7 @@ const courses = [
 .course-item {
     display: flex;
     align-items: center;
-    width: 60%;
+    width: 80%;
     margin: 10px 0;
     padding-bottom: 10px;
 }

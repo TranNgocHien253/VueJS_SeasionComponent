@@ -50,7 +50,7 @@ const cards = [
 
 <style scoped>
 .pupleOurAll {
-    background-color: #2B004F;
+    background-color: #270B60;
     padding: 0 11%;
     color: #ffffff;
 }

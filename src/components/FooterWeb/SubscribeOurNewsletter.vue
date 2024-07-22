@@ -45,21 +45,20 @@
 .subscribe-form input[type="email"] {
     padding: 10px;
     font-size: 16px;
-    border: 2px solid #fff;
+    border: 2px;
+    border: none;
     border-right: none;
-    border-radius: 5px 0 0 5px;
     outline: none;
     width: 100%;
 }
 
 .subscribe-form button {
-    padding: 12px 20px;
+    padding: 10px 20px;
     font-size: 16px;
     border: none;
     background-color: #d3b94b;
     color: #fff;
     cursor: pointer;
-    border-radius: 0 5px 5px 0;
     outline: none;
 }
 
