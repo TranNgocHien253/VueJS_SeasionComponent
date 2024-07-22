@@ -48,6 +48,7 @@ const cards = [
   h4 {
     color: #DBC64C;
     margin-top: 100px;
+    font-size: 60px;
   }
 
   h1 {
@@ -65,25 +66,29 @@ const cards = [
 }
 
 .columCard {
-    width: 20%;
-    text-align: center;
-    box-sizing: border-box;
+  width: 20%;
+  text-align: center;
+  box-sizing: border-box;
 }
+
 @media (max-width: 1444px) {
-    .columCard {
+  .columCard {
     width: 30%;
-    }
+  }
 }
+
 @media (max-width: 1024px) {
   .columCard {
     width: 45%;
-    }
-} 
-@media (max-width: 768px) {
-    .columCard {
-    width: 100%;
-    }
+  }
 }
+
+@media (max-width: 768px) {
+  .columCard {
+    width: 100%;
+  }
+}
+
 .contentCard {
   width: 100%;
   height: 200px;
@@ -110,7 +115,6 @@ const cards = [
   margin: 0;
   font-size: 20px;
   color: #000;
-  /* Màu chữ */
 }
 
 .contentCard:hover {
@@ -129,6 +133,7 @@ button {
 
 button:hover {
   color: #DBC64C;
+  width: 70%;
 }
 
 @media (max-width: 600px) {

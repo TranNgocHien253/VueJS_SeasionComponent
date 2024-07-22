@@ -44,8 +44,8 @@ const events = [
 
 <style scoped>
 .background-events {
-    background-color: #2B004F;
-    padding: 0 20%;
+    background-color: #270B60;
+    padding: 0 10%;
 }
 
 .events-section {
@@ -132,7 +132,10 @@ p {
     transition: background-color 0.3s, color 0.3s;
     margin-top: 20px;
 }
-
+.read-more-btn:hover {
+    background-color: #DBC64C;
+    color: #ffffff;
+}
 @media (max-width: 768px) {
     .background-events {
     padding: 0;

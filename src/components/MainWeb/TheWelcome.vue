@@ -11,7 +11,7 @@
 </template>
 <style scoped>
 .containerWrapper {
-  background-color: #2B004F;
+  background-color: #270B60;
   background-size: cover;
   /* background-image: url('@/assets/image/slide1.jpg'); */
   background-position: center;
@@ -31,6 +31,12 @@
     padding: 5px 10px;
     color: yellow;
     margin: 50px;
+    transition: background-color .3s, color .3s;
+  }
+
+  button:hover {
+    background-color: #DBC64C;
+    color: #ffffff;
   }
 
   h4 {
@@ -42,6 +48,7 @@
     color: white;
   }
 }
+
 
 @media (max-width: 600px) {
   .containerWrapper {
