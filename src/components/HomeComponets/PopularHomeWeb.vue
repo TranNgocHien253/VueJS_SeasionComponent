@@ -11,7 +11,144 @@ import image from '@/assets/image/ImportImage'
         </div>
         <!--end1-->
         <!--2-->
-        <div class="right1">
+
+        <div class="group3">
+            <div class="cardFeatured1">
+                <img :src="image.image6" alt="">
+                <div class="contentP">
+                    <p><span>Technology</span> / January 01, 2045</p>
+                    <h2>Sanctus amet sed amet ip sum lorme.</h2>
+                    <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam natus sit corporis asperiores
+                        inventore facere ullam rerum possimus explicabo eveniet!</h5>
+                </div>
+            </div>
+            <div class="cardSmall2">
+                <div class="smallgroup">
+                    <img :src="image.image6" alt="">
+                    <div class="contentP2">
+                        <p><span>Technology</span> / January 01, 2045</p>
+                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
+                    </div>
+                </div>
+                <div class="smallgroup">
+                    <img :src="image.image6" alt="">
+                    <div class="contentP2">
+                        <p><span>Technology</span> / January 01, 2045</p>
+                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--end2-->
+       
+        <!--3-->
+        <div class="group3">
+            <div class="cardFeatured1">
+                <img :src="image.image6" alt="">
+                <div class="contentP">
+                    <p><span>Technology</span> / January 01, 2045</p>
+                    <h2>Sanctus amet sed amet ip sum lorme.</h2>
+                    <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam natus sit corporis asperiores
+                        inventore facere ullam rerum possimus explicabo eveniet!</h5>
+                </div>
+            </div>
+            <div class="cardSmall2">
+                <div class="smallgroup">
+                    <img :src="image.image6" alt="">
+                    <div class="contentP2">
+                        <p><span>Technology</span> / January 01, 2045</p>
+                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
+                    </div>
+                </div>
+                <div class="smallgroup">
+                    <img :src="image.image6" alt="">
+                    <div class="contentP2">
+                        <p><span>Technology</span> / January 01, 2045</p>
+                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end3-->
+        <!--4-->
+        <div class="group5">
+            <div class="ads">
+                <span>
+                    <h3>&lt;html&gt;</h3>
+                    <h6>CODEX</h6>
+                </span>|
+                <span>ADS 700x70px</span>
+            </div>
+            <div class="hedearPopular2">
+                <p>Latest</p>
+                <a href="#">View All</a>
+            </div>
+        </div>
+        <!--end4-->
+        <!--5-->
+        <div class="group3">
+            <div class="cardFeatured1">
+                <img :src="image.image6" alt="">
+                <div class="contentP">
+                    <p><span>Technology</span> / January 01, 2045</p>
+                    <h2>Sanctus amet sed amet ip sum lorme.</h2>
+                    <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam natus sit corporis asperiores
+                        inventore facere ullam rerum possimus explicabo eveniet!</h5>
+                </div>
+            </div>
+            <div class="cardSmall2">
+                <div class="smallgroup">
+                    <img :src="image.image6" alt="">
+                    <div class="contentP2">
+                        <p><span>Technology</span> / January 01, 2045</p>
+                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
+                    </div>
+                </div>
+                <div class="smallgroup">
+                    <img :src="image.image6" alt="">
+                    <div class="contentP2">
+                        <p><span>Technology</span> / January 01, 2045</p>
+                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end5-->
+
+        
+
+        <!--6-->
+        <div class="group3">
+            <div class="cardFeatured1">
+                <img :src="image.image6" alt="">
+                <div class="contentP">
+                    <p><span>Technology</span> / January 01, 2045</p>
+                    <h2>Sanctus amet sed amet ip sum lorme.</h2>
+                    <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam natus sit corporis asperiores
+                        inventore facere ullam rerum possimus explicabo eveniet!</h5>
+                </div>
+            </div>
+            <div class="cardSmall2">
+                <div class="smallgroup">
+                    <img :src="image.image6" alt="">
+                    <div class="contentP2">
+                        <p><span>Technology</span> / January 01, 2045</p>
+                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
+                    </div>
+                </div>
+                <div class="smallgroup">
+                    <img :src="image.image6" alt="">
+                    <div class="contentP2">
+                        <p><span>Technology</span> / January 01, 2045</p>
+                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end6-->
+         <!--7-->
+         <div class="right1">
             <div class="hedearPopular">
                 <p>Follow Us</p>
             </div>
@@ -123,129 +260,7 @@ import image from '@/assets/image/ImportImage'
                 </div>
             </div>
         </div>
-        <!--end2-->
-        <div class="group3">
-            <div class="cardFeatured1">
-                <img :src="image.image6" alt="">
-                <div class="contentP">
-                    <p><span>Technology</span> / January 01, 2045</p>
-                    <h2>Sanctus amet sed amet ip sum lorme.</h2>
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam natus sit corporis asperiores
-                        inventore facere ullam rerum possimus explicabo eveniet!</h5>
-                </div>
-            </div>
-            <div class="cardSmall2">
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
-                    </div>
-                </div>
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="group3">
-            <div class="cardFeatured1">
-                <img :src="image.image6" alt="">
-                <div class="contentP">
-                    <p><span>Technology</span> / January 01, 2045</p>
-                    <h2>Sanctus amet sed amet ip sum lorme.</h2>
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam natus sit corporis asperiores
-                        inventore facere ullam rerum possimus explicabo eveniet!</h5>
-                </div>
-            </div>
-            <div class="cardSmall2">
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
-                    </div>
-                </div>
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="group5">
-            <div class="ads">
-                <span>
-                    <h3>&lt;html&gt;</h3>
-                    <h6>CODEX</h6>
-                </span>|
-                <span>ADS 700x70px</span>
-            </div>
-            <div class="hedearPopular2">
-                <p>Latest</p>
-                <a href="#">View All</a>
-            </div>
-        </div>
-        <div class="group3">
-            <div class="cardFeatured1">
-                <img :src="image.image6" alt="">
-                <div class="contentP">
-                    <p><span>Technology</span> / January 01, 2045</p>
-                    <h2>Sanctus amet sed amet ip sum lorme.</h2>
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam natus sit corporis asperiores
-                        inventore facere ullam rerum possimus explicabo eveniet!</h5>
-                </div>
-            </div>
-            <div class="cardSmall2">
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
-                    </div>
-                </div>
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="group3">
-            <div class="cardFeatured1">
-                <img :src="image.image6" alt="">
-                <div class="contentP">
-                    <p><span>Technology</span> / January 01, 2045</p>
-                    <h2>Sanctus amet sed amet ip sum lorme.</h2>
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam natus sit corporis asperiores
-                        inventore facere ullam rerum possimus explicabo eveniet!</h5>
-                </div>
-            </div>
-            <div class="cardSmall2">
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
-                    </div>
-                </div>
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <!--end7-->
 
     </div>
 
@@ -475,11 +490,6 @@ h5 {
     .conatainerSpan3 {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 10px;
-    /* background-color: #2196F3; */
-    padding: 10px;
-    margin: 10px 10%;
 }
 }
 </style>
