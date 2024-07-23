@@ -187,7 +187,7 @@ import image from '@/assets/image/ImportImage'
                 <span>ADS 700x70px</span>
             </div>
             <div class="hedearPopular2">
-                <p>Popular</p>
+                <p>Latest</p>
                 <a href="#">View All</a>
             </div>
         </div>
@@ -471,5 +471,15 @@ h5 {
 .grid-button:hover {
     background-color: #b8b8b87b;
 }
-
+@media (max-width: 900px) {
+    .conatainerSpan3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    /* background-color: #2196F3; */
+    padding: 10px;
+    margin: 10px 10%;
+}
+}
 </style>
