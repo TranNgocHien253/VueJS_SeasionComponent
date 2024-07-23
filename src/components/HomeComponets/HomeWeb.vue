@@ -1,22 +1,52 @@
 <script setup>
-import image from '@/assets/image/ImportImage'
+import { ref, onMounted, onUnmounted } from 'vue';
+import image from '@/assets/image/ImportImage';
+
+// Array of groupHeader items
+const items = [
+    { image: image.image1, text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.' },
+    { image: image.image2, text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.' },
+    { image: image.image3, text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.' }
+];
+
+const currentIndex = ref(0);
+const isWideScreen = ref(window.innerWidth >= 900);
+
+const handleResize = () => {
+    isWideScreen.value = window.innerWidth >= 900;
+};
+
+const prevSlide = () => {
+    if (!isWideScreen.value) {
+        currentIndex.value = (currentIndex.value - 1 + items.length) % items.length;
+    }
+};
+
+const nextSlide = () => {
+    if (!isWideScreen.value) {
+        currentIndex.value = (currentIndex.value + 1) % items.length;
+    }
+};
+
+onMounted(() => {
+    window.addEventListener('resize', handleResize);
+});
+
+onUnmounted(() => {
+    window.removeEventListener('resize', handleResize);
+});
 </script>
 
 <template>
     <div class="conatainerSpan3">
         <div class="headerHome">
-            <div class="groupHeader">
-                <img :src="image.image1" alt="">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <button class="nav-button left" v-if="!isWideScreen" @click="prevSlide">&lt;</button>
+            <div class="groupHeader" v-for="(item, index) in items" :key="index"
+                :class="{ active: index === currentIndex, hidden: !isWideScreen && index !== currentIndex }">
+                <img :src="item.image" alt="">
+                <p>{{ item.text }}</p>
             </div>
-            <div class="groupHeader">
-                <img :src="image.image2" alt="">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-            <div class="groupHeader">
-                <img :src="image.image3" alt="">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
+            <button class="nav-button right" v-if="!isWideScreen" @click="nextSlide">&gt;</button>
         </div>
         <div class="colum2">
             <div class="mainHome">
@@ -36,28 +66,22 @@ import image from '@/assets/image/ImportImage'
                 </div>
                 <div class="groupCategoriesShow">
                     <div class="groupCategories">
-                        <img :src="image.image3" alt="">
-                        <p>Categories</p>
+                        <img :src="image.image8" alt="">
+                        <p>Business</p>
                     </div>
                     <div class="groupCategories">
-                        <img :src="image.image3" alt="">
-                        <p>Categories</p>
+                        <img :src="image.image7" alt="">
+                        <p>Technology</p>
                     </div>
                     <div class="groupCategories">
-                        <img :src="image.image3" alt="">
-                        <p>Categories</p>
+                        <img :src="image.image6" alt="">
+                        <p>Entertainment</p>
                     </div>
                     <div class="groupCategories">
-                        <img :src="image.image3" alt="">
-                        <p>Categories</p>
+                        <img :src="image.image5" alt="">
+                        <p>sport</p>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="listGroup">
-            <div class="groupList4">
-                
-
             </div>
         </div>
     </div>
@@ -79,17 +103,21 @@ import image from '@/assets/image/ImportImage'
 
 .headerHome {
     display: flex;
-    align-items: center;
-    margin: 0;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
 }
 
 .groupHeader {
-    display: flex;
     width: 100%;
-    margin: 0 10px;
-    background-color: #fff;
-    max-height: 100px;
+  max-height: 100px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
 }
+
 
 .groupHeader img {
     width: 100px;
@@ -100,6 +128,85 @@ import image from '@/assets/image/ImportImage'
 
 .groupHeader p {
     padding: 10px 0;
+}
+
+.nav-button {
+    background-color: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.404);
+    color: rgba(0, 0, 0, 0.872);
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-button.left {
+    left: 10px;
+}
+
+.nav-button.right {
+    right: 10px;
+}
+
+.nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: background-color .3s;
+}
+
+@media screen and (min-width: 900px) {
+  .headerHome {
+    flex-direction: row;
+    overflow: visible;
+  }
+
+  .groupHeader {
+    display: flex;
+  }
+
+  .nav-button {
+    display: none;
+  }
+  
+}
+
+@media screen and (max-width: 899px) {
+  .groupHeader {
+    display: none;
+  }
+
+  .groupHeader.active {
+    display: flex;
+  }
+  .colum2 {
+        /* Chuyển sang flexbox layout */
+        display: flex;
+        flex-direction: column; /* Sắp xếp theo hàng dọc */
+        gap: 20px;
+    }
+
+    .mainHome,
+    .categoriesRight {
+        /* Đảm bảo các phần tử chiếm toàn bộ chiều rộng */
+        width: 100%;
+    }
+
+    .groupCategoriesShow {
+        /* Đổi cách sắp xếp cho các phần tử bên trong */
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .groupCategories {
+        /* Đảm bảo các nhóm categories sử dụng full width */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .mainHome {
@@ -132,7 +239,7 @@ button {
     background-color: transparent;
     border: 2px solid white;
     color: white;
-    width: 60px;
+    width: 40px;
     height: 40px;
     font-size: 20px;
     cursor: pointer;
@@ -140,6 +247,7 @@ button {
 
 button:hover {
     background-color: rgba(255, 255, 255, 0.3);
+    transition: background-color .3s;
 }
 
 .groupMain p,
@@ -168,6 +276,11 @@ button:hover {
     background-color: #fff;
     padding: 5px;
     margin-bottom: 10px;
+
+    a {
+        text-decoration: none;
+        font-size: 15px;
+    }
 }
 
 .groupCategoriesShow {
@@ -189,12 +302,13 @@ button:hover {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    height: 19%;
+    height: 56.5px;
 }
 
 .groupCategories img {
-    position: absolute;
     width: 100%;
+    height: 100%; /* Đặt chiều cao để chiếm toàn bộ chiều cao của phần tử cha */
+    object-fit: cover;
 }
 
 .groupCategories p {
@@ -203,8 +317,20 @@ button:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 1.2em;
+    font-size: 2em;
     text-align: center;
     z-index: 1;
+}
+@media screen and (max-width: 899px) {
+    .groupCategoriesShow {
+        display: flex;
+        flex-direction: column; /* Sắp xếp các phần tử thành hàng dọc */
+        gap: 10px; /* Khoảng cách giữa các phần tử */
+    }
+
+    .groupCategories {
+        width: 100%; /* Đảm bảo các nhóm categories chiếm toàn bộ chiều rộng */
+        height: 100px; /* Đảm bảo chiều cao tự động điều chỉnh */
+    }
 }
 </style>

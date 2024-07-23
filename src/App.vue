@@ -1,8 +1,10 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import TrandingHeader from './components/HeaderComponents/TrandingHeader.vue'
 import LogoHEader from './components/HeaderComponents/LogoHeader.vue'
 import DashboardHeader from './components/HeaderComponents/DashboardHeader.vue'
+import ContainFooter from './components/FooterComponets/ContainFooter.vue'
+
 </script>
 
 <template>
@@ -11,16 +13,14 @@ import DashboardHeader from './components/HeaderComponents/DashboardHeader.vue'
       <TrandingHeader />
       <LogoHEader />
       <DashboardHeader />
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
     </div>
   </header>
   <main>
     <RouterView />
   </main>
-
+  <footer>
+    <ContainFooter />
+  </footer>
 </template>
 
 <style scoped>

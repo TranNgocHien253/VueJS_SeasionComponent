@@ -5,51 +5,88 @@ import image1 from '@/assets/image/icons8-search-26.png'
 
 // Lấy thông tin đường dẫn hiện tại
 const route = useRoute()
-const currentRoute = ref(route.path)
+const currentRoute = ref(route.path);
+
+const showSearchBox = ref(true);
+const hideSearchBox = ref(false);
+const toggleSearchBox = () => {
+  showSearchBox.value = !showSearchBox.value;
+};
+
+const handleResize = () => {
+  if (window.innerWidth < 900) {
+    showSearchBox.value = false;
+    hideSearchBox.value = true;
+
+  } else {
+    showSearchBox.value = true;
+    hideSearchBox.value = false;
+  }
+};
+
+window.addEventListener('resize', handleResize);
+window.addEventListener('load', handleResize);
 </script>
 
 <template>
-<div class="containerHeader">
-  <div class="topnav">
-    <div class="routerHeader">
-      <RouterLink 
-        to="/" 
-        :class="{ active: currentRoute === '/' }"
-        @click="currentRoute = '/'"
-      >Home</RouterLink>
-      <RouterLink 
-        to="/about" 
-        :class="{ active: currentRoute === '/about' }"
-        @click="currentRoute = '/about'"
-      >Categories</RouterLink>
-      <RouterLink 
-        to="/" 
-        :class="{ active: currentRoute === '/labala' }"
-        @click="currentRoute = '/labala'"
-      >Single News</RouterLink>
-      <RouterLink 
-        to="/" 
-        :class="{ active: currentRoute === '/labala1' }"
-        @click="currentRoute = '/labala1'"
-      >Dropdown</RouterLink>
-      <RouterLink 
-        to="/" 
-        :class="{ active: currentRoute === '/labala11' }"
-        @click="currentRoute = '/labala11'"
-      >Contact</RouterLink>
-    </div>
-    <div class="search-container">
+  <div class="minWidth"v-show="hideSearchBox">
+    <div class="logo" >NEWS<span>ROOM</span></div>
+    <label class="containermenu">
+      <div class="leftmenu">
+        <input type="checkbox" @click="toggleSearchBox">
+        <div class="checkmark">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </label>
+  </div>
+  <div class="containerHeader">
+    <div class="topnav" v-show="showSearchBox">
+      <div class="routerHeader">
+        <RouterLink to="/" :class="{ active: currentRoute === '/' }" @click="currentRoute = '/'">Home</RouterLink>
+        <RouterLink to="/about" :class="{ active: currentRoute === '/about' }" @click="currentRoute = '/about'">
+          Categories</RouterLink>
+        <RouterLink to="/" :class="{ active: currentRoute === '/labala' }" @click="currentRoute = '/labala'">Single News
+        </RouterLink>
+        <RouterLink to="/" :class="{ active: currentRoute === '/labala1' }" @click="currentRoute = '/labala1'">Dropdown
+        </RouterLink>
+        <RouterLink to="/" :class="{ active: currentRoute === '/labala11' }" @click="currentRoute = '/labala11'">Contact
+        </RouterLink>
+      </div>
+      <div class="search-container">
         <input type="text" placeholder="Keyword" name="search">
         <button type="submit"><img :src="image1" alt=""></button>
+      </div>
     </div>
+
   </div>
-</div>
 </template>
 
 <style scoped>
 .containerHeader {
   background-color: #ffffff;
 }
+
+.minWidth {
+  background-color: #ffffff;
+  padding: 10px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.minWidth .logo {
+  font-weight: bold;
+  color: #d0021b;
+  font-size: 30px;
+
+  span {
+    color: #000;
+  }
+}
+
 .topnav {
   display: flex;
   align-items: center;
@@ -57,10 +94,12 @@ const currentRoute = ref(route.path)
   background-color: #ffffff;
   margin: 0 5%;
 }
+
 .routerHeader a.active {
   background-color: #ff0000;
   color: white;
 }
+
 .topnav a {
   float: left;
   display: block;
@@ -70,9 +109,11 @@ const currentRoute = ref(route.path)
   text-decoration: none;
   font-size: 17px;
 }
+
 .routerHeader {
   margin: 0px 20px;
 }
+
 .topnav a:hover {
   background-color: #ddd;
   color: black;
@@ -84,13 +125,17 @@ const currentRoute = ref(route.path)
 }
 
 .topnav .search-container {
-  float: right;
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
 }
 
 .topnav input[type=text] {
   padding: 6px;
   font-size: 17px;
   border: 1px solid #bcbcbc;
+  flex: 1; 
+  box-sizing: border-box; 
 }
 
 .topnav .search-container button {
@@ -113,21 +158,91 @@ const currentRoute = ref(route.path)
 .topnav .search-container button:hover {
   background: #ccc;
 }
+.containermenu input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
 
-@media screen and (max-width: 600px) {
-  .topnav .search-container {
-    float: none;
+.containermenu {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+}
+
+.leftmenu {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+}
+
+.checkmark span {
+  width: 32px;
+  height: 2px;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.checkmark span:nth-child(1) {
+  top: 10%;
+}
+
+.checkmark span:nth-child(2) {
+  top: 50%;
+}
+
+.checkmark span:nth-child(3) {
+  top: 90%;
+}
+
+@media screen and (max-width: 900px) {
+  .topnav {
+    flex-direction: column;
+    align-items: stretch;
   }
-  .topnav a, .topnav input[type=text], .topnav .search-container button {
+
+  .topnav .search-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .topnav input[type=text],
+  .topnav .search-container {
+    width: auto;
+    margin-left: 10px;
+    button {
+      margin-right: 10px;
+      transform: translateX(-10px)
+    }
+  }
+  
+
+  .topnav a {
     float: none;
     display: block;
     text-align: left;
     width: 100%;
     margin: 0;
     padding: 14px;
-  }
-  .topnav input[type=text] {
-    border: 1px solid #ccc;  
   }
 }
 </style>

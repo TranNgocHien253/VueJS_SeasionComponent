@@ -31,6 +31,7 @@
 .tranding {
   display: flex;
   align-items: center;
+  flex: 1; 
 }
 
 .tranding-label {
@@ -55,9 +56,26 @@
 
 .tranding-text {
   margin-left: 10px;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  max-width: 100%; 
+  flex: 1; 
 }
 
 .date {
   color: gray;
 }
+
+@media (max-width: 600px) {
+  .tranding-text {
+    flex: 1;
+  }
+}
+@media (max-width: 800px) {
+  .date {
+    display: none; 
+  }
+}
+
 </style>
