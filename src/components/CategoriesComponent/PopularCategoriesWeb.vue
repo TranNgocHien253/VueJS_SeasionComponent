@@ -18,7 +18,15 @@ const items = ref([
   { imgSrc: image.image12, category: 'Technology', date: 'January 01, 2045', h5Text: 'Sanctus amet sed amet ip sum lorme.' },
   { imgSrc: image.image13, category: 'Technology', date: 'January 01, 2045', h5Text: 'Sanctus amet sed amet ip sum lorme.' },
 ]);
-
+const articles = ref([
+  { image: image.image1, category: 'Technology', date: 'January 01, 2045', title: 'Sanctus amet sed amet ip sum lorme.' },
+  { image: image.image15, category: 'Technology', date: 'January 01, 2045', title: 'Sanctus amet sed amet ip sum lorme.' },
+  { image: image.image4, category: 'Technology', date: 'January 01, 2045', title: 'Sanctus amet sed amet ip sum lorme.' },
+  { image: image.image12, category: 'Technology', date: 'January 01, 2045', title: 'Sanctus amet sed amet ip sum lorme.' },
+  { image: image.image5, category: 'Technology', date: 'January 01, 2045', title: 'Sanctus amet sed amet ip sum lorme.' },
+  { image: image.image2, category: 'Technology', date: 'January 01, 2045', title: 'Sanctus amet sed amet ip sum lorme.' },
+  { image: image.image4, category: 'Technology', date: 'January 01, 2045', title: 'Sanctus amet sed amet ip sum lorme.' },
+]);
 const itemsPerPage = 10;
 const currentPage = ref(1);
 
@@ -67,7 +75,7 @@ function goToPage(page) {
 
         <div class="group3">
             <div class="cardFeatured1">
-                <img :src="image.image6" alt="">
+                <img :src="image.image8" alt="">
                 <div class="contentP">
                     <p><span>Technology</span> / January 01, 2045</p>
                     <h2>Sanctus amet sed amet ip sum lorme.</h2>
@@ -194,53 +202,13 @@ function goToPage(page) {
                 <p>Tranding</p>
             </div>
             <div class="cardSmall1">
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
+                <div class="cardSmall1">
+                    <div v-for="(article, index) in articles" :key="index" class="smallgroup">
+                    <img :src="article.image" alt="">
                     <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
+                        <p><span>{{ article.category }}</span> / {{ article.date }}</p>
+                        <h5>{{ article.title }}</h5>
                     </div>
-                </div>
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
-                    </div>
-                </div>
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
-                    </div>
-                </div>
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
-                    </div>
-                </div>
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
-                    </div>
-                </div>
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
-                    </div>
-                </div>
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
                     </div>
                 </div>
             </div>

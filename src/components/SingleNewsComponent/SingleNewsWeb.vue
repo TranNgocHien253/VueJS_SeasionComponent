@@ -1,5 +1,15 @@
 <script setup>
 import image from '@/assets/image/ImportImage'
+import { ref } from 'vue'
+const articles = ref([
+    { image: image.image1, category: 'Technology', date: 'January 01, 2045', title: 'Sanctus amet sed amet ip sum lorme.' },
+    { image: image.image15, category: 'Technology', date: 'January 01, 2045', title: 'Sanctus amet sed amet ip sum lorme.' },
+    { image: image.image4, category: 'Technology', date: 'January 01, 2045', title: 'Sanctus amet sed amet ip sum lorme.' },
+    { image: image.image12, category: 'Technology', date: 'January 01, 2045', title: 'Sanctus amet sed amet ip sum lorme.' },
+    { image: image.image5, category: 'Technology', date: 'January 01, 2045', title: 'Sanctus amet sed amet ip sum lorme.' },
+    { image: image.image2, category: 'Technology', date: 'January 01, 2045', title: 'Sanctus amet sed amet ip sum lorme.' },
+    { image: image.image4, category: 'Technology', date: 'January 01, 2045', title: 'Sanctus amet sed amet ip sum lorme.' },
+]);
 </script>
 
 <template>
@@ -92,17 +102,18 @@ import image from '@/assets/image/ImportImage'
                         </div>
                         <div class="commnentSon">
                             <div class="smallgroupCommemt">
-                            <img :src="image.image6" alt="">
-                            <div class="commnentFather">
-                                <div class="contentP2">
-                                    <p><span>Technology</span> / January 01, 2045</p>
-                                    <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et beatae veritatis
-                                        repellat adipisci, ullam a non est aperiam rerum, deserunt eligendi, numquam
-                                        explicabo delectus magnam dolore sapiente. Illum, blanditiis modi.</h4>
-                                    <button>Reply</button>
+                                <img :src="image.image6" alt="">
+                                <div class="commnentFather">
+                                    <div class="contentP2">
+                                        <p><span>Technology</span> / January 01, 2045</p>
+                                        <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et beatae
+                                            veritatis
+                                            repellat adipisci, ullam a non est aperiam rerum, deserunt eligendi, numquam
+                                            explicabo delectus magnam dolore sapiente. Illum, blanditiis modi.</h4>
+                                        <button>Reply</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
                     </div>
                 </div>
@@ -110,23 +121,23 @@ import image from '@/assets/image/ImportImage'
             <div class="container">
                 <h2 class="title">Leave a comment</h2>
                 <form>
-                <div class="form-group">
-                    <label for="name" class="label">Name *</label>
-                    <input type="text" id="name" class="input" required>
-                </div>
-                <div class="form-group">
-                    <label for="email" class="label">Email *</label>
-                    <input type="email" id="email" class="input" required>
-                </div>
-                <div class="form-group">
-                    <label for="website" class="label">Website</label>
-                    <input type="url" id="website" class="input">
-                </div>
-                <div class="form-group">
-                    <label for="message" class="label">Message *</label>
-                    <textarea id="message" rows="4" class="textarea" required></textarea>
-                </div>
-                <button type="submit" class="button">Leave a comment</button>
+                    <div class="form-group">
+                        <label for="name" class="label">Name *</label>
+                        <input type="text" id="name" class="input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="label">Email *</label>
+                        <input type="email" id="email" class="input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="website" class="label">Website</label>
+                        <input type="url" id="website" class="input">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="label">Message *</label>
+                        <textarea id="message" rows="4" class="textarea" required></textarea>
+                    </div>
+                    <button type="submit" class="button">Leave a comment</button>
                 </form>
             </div>
         </div>
@@ -180,47 +191,28 @@ import image from '@/assets/image/ImportImage'
                 <p>Tranding</p>
             </div>
             <div class="cardSmall1">
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h4>Sanctus amet sed amet ip sum lorme.</h4>
+                <div class="cardSmall1">
+                    <div v-for="(article, index) in articles" :key="index" class="smallgroup">
+                        <img :src="article.image" alt="">
+                        <div class="contentP2">
+                            <p><span>{{ article.category }}</span> / {{ article.date }}</p>
+                            <h5>{{ article.title }}</h5>
+                        </div>
                     </div>
                 </div>
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h4>Sanctus amet sed amet ip sum lorme.</h4>
-                    </div>
-                </div>
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h4>Sanctus amet sed amet ip sum lorme.</h4>
-                    </div>
-                </div>
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h4>Sanctus amet sed amet ip sum lorme.</h4>
-                    </div>
-                </div>
-                <div class="hedearPopular">
-                    <p>Tags</p>
-                </div>
-                <div class="button-container">
-                    <button class="grid-button">Button 1</button>
-                    <button class="grid-button">Button 2</button>
-                    <button class="grid-button">Button 3</button>
-                    <button class="grid-button">Button 4</button>
-                    <button class="grid-button">Button 5</button>
-                    <button class="grid-button">Button 6ada</button>
-                    <button class="grid-button">Button 7</button>
-                    <button class="grid-button">Button8</button>
-                </div>
+            </div>
+            <div class="hedearPopular">
+                <p>Tags</p>
+            </div>
+            <div class="button-container">
+                <button class="grid-button">Button 1</button>
+                <button class="grid-button">Button 2</button>
+                <button class="grid-button">Button 3</button>
+                <button class="grid-button">Button 4</button>
+                <button class="grid-button">Button 5</button>
+                <button class="grid-button">Button 6ada</button>
+                <button class="grid-button">Button 7</button>
+                <button class="grid-button">Button8</button>
             </div>
         </div>
         <!--end7-->
@@ -237,13 +229,16 @@ import image from '@/assets/image/ImportImage'
     gap: 10px;
     margin: 10px 10%;
 }
-.addressCategoties{
+
+.addressCategoties {
     margin: 10px 10%;
     color: #8b8b8b;
+
     span {
         color: #ff0000;
     }
 }
+
 a {
     text-decoration: none;
     color: #8b8b8b;
@@ -392,50 +387,50 @@ button:hover {
 }
 
 .EmailForm {
-  max-width: 600px;
-  margin: auto;
-  padding: 20px;
-  justify-content: center;
-  text-align: center;
-  background-color: #ffffff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .EmailForm p {
-  margin-bottom: 16px;
-  font-size: 1rem;
-  color: #4b5563;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    color: #4b5563;
 }
 
 .EmailSearch {
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
 }
 
 .EmailSearch input {
-  flex: 1;
-  border: 1px solid #d1d5db;
-  padding: 10px;
-  font-size: 1rem;
-  box-sizing: border-box;
+    flex: 1;
+    border: 1px solid #d1d5db;
+    padding: 10px;
+    font-size: 1rem;
+    box-sizing: border-box;
 }
 
 .EmailSearch input::placeholder {
-  color: #9ca3af;
+    color: #9ca3af;
 }
 
 .EmailSearch button {
-  background-color: #f63b3b;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  height: 40px;
+    background-color: #f63b3b;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    height: 40px;
 }
 
 .EmailSearch button:hover {
-  background-color: #eb2525;
+    background-color: #eb2525;
 }
 
 .imageSigle {
@@ -473,51 +468,51 @@ button:hover {
 }
 
 .container {
-  margin: 10px 0;
-  padding: 24px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    padding: 24px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .button {
-  background-color: #ef4444;
-  color: #ffffff;
-  border: none;
-  padding: 8px 16px;
-  cursor: pointer;
-  font-size: 0.875rem;
+    background-color: #ef4444;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.875rem;
 }
 
 .button:hover {
-  background-color: #dc2626;
+    background-color: #dc2626;
 }
 
 .form-group {
-  margin-bottom: 16px;
+    margin-bottom: 16px;
 }
 
 .label {
-  display: block;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #4b5563;
-  margin-bottom: 8px;
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 8px;
 }
 
 .input,
 .textarea {
-  width: 100%;
-  border: 1px solid #d1d5db;
-  border-radius: 4px;
-  padding: 8px;
-  box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 8px;
+    box-sizing: border-box;
 }
 
 .input:focus,
 .textarea:focus {
-  border-color: #3b82f6;
-  outline: none;
-  box-shadow: 0 0 0 1px #3b82f6;
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 0 1px #3b82f6;
 }
 
 @media (max-width: 900px) {
@@ -529,5 +524,4 @@ button:hover {
         width: 30%;
     }
 }
-
 </style>

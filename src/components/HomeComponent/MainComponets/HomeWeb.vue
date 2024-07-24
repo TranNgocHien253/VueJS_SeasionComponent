@@ -4,9 +4,9 @@ import image from '@/assets/image/ImportImage';
 
 // Array of groupHeader items
 const items = [
-    { image: image.image1, text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.' },
-    { image: image.image2, text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.' },
-    { image: image.image3, text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.' }
+    { image: image.image1, text: 'AI enhances work efficiency and automation.' },
+    { image: image.image2, text: 'Blockchain ensures transparent and secure transactions.' },
+    { image: image.image3, text: '5G offers fast speeds and stable connectivity.' }
 ];
 
 const currentIndex = ref(0);
@@ -127,6 +127,7 @@ a {
     height: auto;
     background-size: cover;
     margin-right: 10px;
+    object-fit: cover;
 }
 
 .groupHeader p {
@@ -209,6 +210,11 @@ a {
         display: flex;
         justify-content: center;
         align-items: center;
+        opacity: .9;
+        box-shadow: #000000;
+    }
+    .groupCategories:hover {
+        opacity: 1;
     }
 }
 
@@ -222,7 +228,7 @@ a {
     position: relative;
     background-color: aqua;
     min-height: 300px;
-    background-image: url('@/assets/image/images (12).jpg');
+    background-image: url('@/assets/image/image (11).jpg');
     background-size: cover;
     display: flex;
     flex-direction: column;

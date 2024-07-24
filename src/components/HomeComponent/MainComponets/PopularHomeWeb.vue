@@ -1,5 +1,15 @@
 <script setup>
 import image from '@/assets/image/ImportImage'
+import { ref } from 'vue'
+const articles = ref([
+  { image: image.image1, category: 'Technology', date: 'January 01, 2045', title: 'Sanctus amet sed amet ip sum lorme.' },
+  { image: image.image15, category: 'Technology', date: 'January 01, 2045', title: 'Sanctus amet sed amet ip sum lorme.' },
+  { image: image.image4, category: 'Technology', date: 'January 01, 2045', title: 'Sanctus amet sed amet ip sum lorme.' },
+  { image: image.image12, category: 'Technology', date: 'January 01, 2045', title: 'Sanctus amet sed amet ip sum lorme.' },
+  { image: image.image5, category: 'Technology', date: 'January 01, 2045', title: 'Sanctus amet sed amet ip sum lorme.' },
+  { image: image.image2, category: 'Technology', date: 'January 01, 2045', title: 'Sanctus amet sed amet ip sum lorme.' },
+  { image: image.image4, category: 'Technology', date: 'January 01, 2045', title: 'Sanctus amet sed amet ip sum lorme.' },
+]);
 </script>
 
 <template>
@@ -14,7 +24,7 @@ import image from '@/assets/image/ImportImage'
 
         <div class="group3">
             <div class="cardFeatured1">
-                <img :src="image.image6" alt="">
+                <img :src="image.image2" alt="">
                 <div class="contentP">
                     <p><span>Technology</span> / January 01, 2045</p>
                     <h2>Sanctus amet sed amet ip sum lorme.</h2>
@@ -24,14 +34,14 @@ import image from '@/assets/image/ImportImage'
             </div>
             <div class="cardSmall2">
                 <div class="smallgroup">
-                    <img :src="image.image9" alt="">
+                    <img :src="image.image3" alt="">
                     <div class="contentP2">
                         <p><span>Technology</span> / January 01, 2045</p>
                         <h5>Sanctus amet sed amet ip sum lorme.</h5>
                     </div>
                 </div>
                 <div class="smallgroup">
-                    <img :src="image.image6" alt="">
+                    <img :src="image.image14" alt="">
                     <div class="contentP2">
                         <p><span>Technology</span> / January 01, 2045</p>
                         <h5>Sanctus amet sed amet ip sum lorme.</h5>
@@ -45,7 +55,7 @@ import image from '@/assets/image/ImportImage'
         <!--3-->
         <div class="group3">
             <div class="cardFeatured1">
-                <img :src="image.image5" alt="">
+                <img :src="image.image1" alt="">
                 <div class="contentP">
                     <p><span>Technology</span> / January 01, 2045</p>
                     <h2>Sanctus amet sed amet ip sum lorme.</h2>
@@ -89,7 +99,7 @@ import image from '@/assets/image/ImportImage'
         <!--5-->
         <div class="group3">
             <div class="cardFeatured1">
-                <img :src="image.image6" alt="">
+                <img :src="image.image4" alt="">
                 <div class="contentP">
                     <p><span>Technology</span> / January 01, 2045</p>
                     <h2>Sanctus amet sed amet ip sum lorme.</h2>
@@ -99,14 +109,14 @@ import image from '@/assets/image/ImportImage'
             </div>
             <div class="cardSmall2">
                 <div class="smallgroup">
-                    <img :src="image.image6" alt="">
+                    <img :src="image.image15" alt="">
                     <div class="contentP2">
                         <p><span>Technology</span> / January 01, 2045</p>
                         <h5>Sanctus amet sed amet ip sum lorme.</h5>
                     </div>
                 </div>
                 <div class="smallgroup">
-                    <img :src="image.image6" alt="">
+                    <img :src="image.image5" alt="">
                     <div class="contentP2">
                         <p><span>Technology</span> / January 01, 2045</p>
                         <h5>Sanctus amet sed amet ip sum lorme.</h5>
@@ -121,7 +131,7 @@ import image from '@/assets/image/ImportImage'
         <!--6-->
         <div class="group3">
             <div class="cardFeatured1">
-                <img :src="image.image6" alt="">
+                <img :src="image.image5" alt="">
                 <div class="contentP">
                     <p><span>Technology</span> / January 01, 2045</p>
                     <h2>Sanctus amet sed amet ip sum lorme.</h2>
@@ -131,7 +141,7 @@ import image from '@/assets/image/ImportImage'
             </div>
             <div class="cardSmall2">
                 <div class="smallgroup">
-                    <img :src="image.image6" alt="">
+                    <img :src="image.image7" alt="">
                     <div class="contentP2">
                         <p><span>Technology</span> / January 01, 2045</p>
                         <h5>Sanctus amet sed amet ip sum lorme.</h5>
@@ -196,68 +206,26 @@ import image from '@/assets/image/ImportImage'
                 <p>Tranding</p>
             </div>
             <div class="cardSmall1">
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
-                    </div>
+                <div v-for="(article, index) in articles" :key="index" class="smallgroup">
+                <img :src="article.image" alt="">
+                <div class="contentP2">
+                    <p><span>{{ article.category }}</span> / {{ article.date }}</p>
+                    <h5>{{ article.title }}</h5>
                 </div>
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
-                    </div>
                 </div>
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
-                    </div>
-                </div>
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
-                    </div>
-                </div>
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
-                    </div>
-                </div>
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
-                    </div>
-                </div>
-                <div class="smallgroup">
-                    <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
-                    </div>
-                </div>
-                <div class="hedearPopular">
-                    <p>Tags</p>
-                </div>
-                <div class="button-container">
-                    <button class="grid-button">Button 1</button>
-                    <button class="grid-button">Button 2</button>
-                    <button class="grid-button">Button 3</button>
-                    <button class="grid-button">Button 4</button>
-                    <button class="grid-button">Button 5</button>
-                    <button class="grid-button">Button 6ada</button>
-                    <button class="grid-button">Button 7</button>
-                    <button class="grid-button">Button8</button>
-                </div>
+            </div>
+            <div class="hedearPopular">
+                <p>Tags</p>
+            </div>
+            <div class="button-container">
+                <button class="grid-button">Button 1</button>
+                <button class="grid-button">Button 2</button>
+                <button class="grid-button">Button 3</button>
+                <button class="grid-button">Button 4</button>
+                <button class="grid-button">Button 5</button>
+                <button class="grid-button">Button 6ada</button>
+                <button class="grid-button">Button 7</button>
+                <button class="grid-button">Button8</button>
             </div>
         </div>
         <!--end7-->

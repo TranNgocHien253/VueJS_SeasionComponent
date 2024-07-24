@@ -1,11 +1,10 @@
 <script setup>
 import { ref } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import image1 from '@/assets/image/icons8-search-26.png'
 
-// Lấy thông tin đường dẫn hiện tại
-const route = useRoute()
-const currentRoute = ref(route.path);
+const route = useRoute();
+const router = useRouter();
 
 const showSearchBox = ref(true);
 const hideSearchBox = ref(false);
@@ -17,11 +16,15 @@ const handleResize = () => {
   if (window.innerWidth < 900) {
     showSearchBox.value = false;
     hideSearchBox.value = true;
-
   } else {
     showSearchBox.value = true;
     hideSearchBox.value = false;
   }
+};
+
+const navigateHome = () => {
+  router.push('/');
+  showSearchBox.value = false;
 };
 
 window.addEventListener('resize', handleResize);
@@ -29,8 +32,8 @@ window.addEventListener('load', handleResize);
 </script>
 
 <template>
-  <div class="minWidth"v-show="hideSearchBox">
-    <div class="logo" >NEWS<span>ROOM</span></div>
+  <div class="minWidth" v-show="hideSearchBox">
+    <div class="logo" @click="navigateHome">NEWS<span>ROOM</span></div>
     <label class="containermenu">
       <div class="leftmenu">
         <input type="checkbox" @click="toggleSearchBox">
@@ -45,22 +48,17 @@ window.addEventListener('load', handleResize);
   <div class="containerHeader">
     <div class="topnav" v-show="showSearchBox">
       <div class="routerHeader">
-        <RouterLink to="/" :class="{ active: currentRoute === '/' }" @click="currentRoute = '/'">Home</RouterLink>
-        <RouterLink to="/categories" :class="{ active: currentRoute === '/categories' }" @click="currentRoute = '/categories'">
-          Categories</RouterLink>
-        <RouterLink to="/SingleNews" :class="{ active: currentRoute === '/SingleNews' }" @click="currentRoute = '/SingleNews'">Single News
-        </RouterLink>
-        <RouterLink to="/" :class="{ active: currentRoute === '/labala1' }" @click="currentRoute = '/labala1'">Dropdown
-        </RouterLink>
-        <RouterLink to="/" :class="{ active: currentRoute === '/labala11' }" @click="currentRoute = '/labala11'">Contact
-        </RouterLink>
+        <RouterLink to="/" :class="{ active: route.path === '/' }">Home</RouterLink>
+        <RouterLink to="/categories" :class="{ active: route.path === '/categories' }">Categories</RouterLink>
+        <RouterLink to="/SingleNews" :class="{ active: route.path === '/SingleNews' }">Single News</RouterLink>
+        <RouterLink to="/labala1" :class="{ active: route.path === '/labala1' }">Dropdown</RouterLink>
+        <RouterLink to="/labala11" :class="{ active: route.path === '/labala11' }">Contact</RouterLink>
       </div>
       <div class="search-container">
         <input type="text" placeholder="Keyword" name="search">
         <button type="submit"><img :src="image1" alt=""></button>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -81,7 +79,7 @@ window.addEventListener('load', handleResize);
   font-weight: bold;
   color: #d0021b;
   font-size: 30px;
-
+  cursor: pointer;
   span {
     color: #000;
   }
@@ -127,13 +125,13 @@ window.addEventListener('load', handleResize);
 .topnav .search-container {
   display: flex;
   align-items: center; 
-  gap: 10px; 
+  margin: 3px;
 }
 
 .topnav input[type=text] {
   padding: 6px;
-  font-size: 17px;
-  border: 1px solid #bcbcbc;
+  font-size: 16px;
+  border: 2px solid #e3e3e3;
   flex: 1; 
   box-sizing: border-box; 
 }
@@ -147,7 +145,7 @@ window.addEventListener('load', handleResize);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 13px;
+  padding: 10px 10px;
 }
 
 .topnav .search-container button img {
