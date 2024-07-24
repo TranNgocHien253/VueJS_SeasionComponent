@@ -52,11 +52,11 @@ function goToPage(page) {
 </script>
 
 <template>
+    <div class="addressCategoties">
+        <p><span>Home</span> / <span>Category</span> / Technology</p>
+    </div>
     <div class="conatainerSpan3">
 
-        <div class="addressCategoties">
-            <p><span>Home</span> / <span>Category</span> / Technology</p>
-        </div>
         <!--1-->
         <div class="hedearPopular">
             <p>Technology</p>
@@ -278,7 +278,7 @@ function goToPage(page) {
     margin: 10px 10%;
 }
 .addressCategoties{
-    margin: 10px;
+    margin: 10px 10%;
     color: #8b8b8b;
     span {
         color: #ff0000;
@@ -395,41 +395,51 @@ h5 {
     font-size: 20px;
     margin-right: 10px;
 }
-
 .EmailForm {
-    background-color: #fff;
-    text-align: center;
-    padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  justify-content: center;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .EmailForm p {
-    background-color: #fff;
-    color: rgb(126, 126, 126);
+  margin-bottom: 16px;
+  font-size: 1rem;
+  color: #4b5563;
 }
 
 .EmailSearch {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
-.EmailSearch input[type="text"] {
-    padding: 10px;
-    border: 1px solid #ccc;
+.EmailSearch input {
+  flex: 1;
+  border: 1px solid #d1d5db;
+  padding: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.EmailSearch input::placeholder {
+  color: #9ca3af;
 }
 
 .EmailSearch button {
-    padding: 10px;
-    color: #fff;
-    background-color: #ff0000;
-    border: 1px solid #ff0000;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  background-color: #f63b3b;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 40px;
 }
 
 .EmailSearch button:hover {
-    background-color: #b30000;
+  background-color: #eb2525;
 }
 
 .imageSigle {

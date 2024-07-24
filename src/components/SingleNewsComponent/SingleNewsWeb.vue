@@ -3,38 +3,136 @@ import image from '@/assets/image/ImportImage'
 </script>
 
 <template>
+    <div class="addressCategoties">
+        <p><span>Home</span> / <span>Category</span> / <span>Technology</span> / News Title</p>
+    </div>
     <div class="conatainerSpan3">
         <!--6-->
         <div class="group3">
             <div class="cardFeatured1">
-                <img :src="image.image6" alt="">
+                <img :src="image.image11" alt="">
                 <div class="contentP">
                     <p><span>Technology</span> / January 01, 2045</p>
-                    <h2>Sanctus amet sed amet ip sum lorme.</h2>
-                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae necessitatibus provident quas nulla architecto voluptatibus, at deserunt illum dignissimos, officiis facere velit sapiente assumenda magni voluptates quisquam a laudantium dicta nisi optio sequi? Voluptatum alias, corrupti quam labore excepturi nisi, error cumque a, possimus non aliquam perferendis. Cupiditate ratione quis perspiciatis a, omnis eius, mollitia recusandae odit nihil expedita tempore!</h5><br>
-                    <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, ea iste necessitatibus possimus error tempore nemo exercitationem provident beatae doloribus culpa iure cumque. Beatae, a minima! Enim ratione ea, libero odio asperiores quasi iste consequatur odit ipsum dignissimos! Fugit adipisci quas natus obcaecati! Placeat sint consectetur, esse ipsam quibusdam dolor laboriosam, dolore repellat hic cupiditate rem sit!</h5>
+                    <h2>Est stet amet ipsum stet clita rebum duo.</h2>
+                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae necessitatibus provident
+                        quas nulla architecto voluptatibus, at deserunt illum dignissimos, officiis facere velit
+                        sapiente assumenda magni voluptates quisquam a laudantium dicta nisi optio sequi? Voluptatum
+                        alias, corrupti quam labore excepturi nisi, error cumque a, possimus non aliquam perferendis.
+                        Cupiditate ratione quis perspiciatis a, omnis eius, mollitia recusandae odit nihil expedita
+                        tempore!</h4><br>
+                    <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, ea iste necessitatibus
+                        possimus error tempore nemo exercitationem provident beatae doloribus culpa iure cumque. Beatae,
+                        a minima! Enim ratione ea, libero odio asperiores quasi iste consequatur odit ipsum dignissimos!
+                        Fugit adipisci quas natus obcaecati! Placeat sint consectetur, esse ipsam quibusdam dolor
+                        laboriosam, dolore repellat hic cupiditate rem sit!</h4>
+                </div>
+                <div class="title">
+                    <p>Est dolor lorem et ea</p>
+                </div>
+                <div class="contentP-and-img">
+                    <div class="hinh_anh">
+                        <img :src="image.image5" alt="Image description">
+                    </div>
+                    <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, numquam molestiae unde
+                        voluptate repellendus laudantium cumque voluptatibus autem reprehenderit ipsum impedit nemo cum
+                        quibusdam natus magnam, hic facere. Exercitationem, repudiandae quasi? Deleniti tenetur deserunt
+                        quaerat aperiam nobis, assumenda doloribus? Iure eligendi dicta fugit veniam? Quam architecto
+                        quaerat commodi soluta exercitationem ducimus dolores expedita. Asperiores doloribus dolorem
+                        cupiditate optio est alias! Consequatur, consequuntur voluptate? Architecto fuga, autem nam
+                        nihil placeat molestiae numquam beatae, tenetur, delectus praesentium commodi adipisci
+                        doloremque debitis perspiciatis modi maiores minus earum suscipit molestias soluta eos. Ipsam,
+                        ipsum?</h4>
+                </div>
+                <div class="title">
+                    <p>Est dolor lorem et ea</p>
+                </div>
+                <div class="contentP-and-img">
+                    <div class="hinh_anh2">
+                        <img :src="image.image5" alt="Image description">
+                    </div>
+                    <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, numquam molestiae unde
+                        voluptate repellendus laudantium cumque voluptatibus autem reprehenderit ipsum impedit nemo cum
+                        quibusdam natus magnam, hic facere. Exercitationem, repudiandae quasi? Deleniti tenetur deserunt
+                        quaerat aperiam nobis, assumenda doloribus? Iure eligendi dicta fugit veniam? Quam architecto
+                        quaerat commodi soluta exercitationem ducimus dolores expedita. Asperiores doloribus dolorem
+                        cupiditate optio est alias! Consequatur, consequuntur voluptate? Architecto fuga, autem nam
+                        nihil placeat molestiae numquam beatae, tenetur, delectus praesentium commodi adipisci
+                        doloremque debitis perspiciatis modi maiores minus earum suscipit molestias soluta eos. Ipsam,
+                        ipsum?</h4>
                 </div>
             </div>
             <div class="cardSmall2">
-                <div class="smallgroup">
+                <div class="title">
+                    <p>3 Comments</p><!--count comment here-->
+                </div>
+                <div class="smallgroupCommemt">
                     <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
+                    <div class="commnentFather">
+                        <div class="contentP2">
+                            <p><span>Technology</span> / January 01, 2045</p>
+                            <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et beatae veritatis repellat
+                                adipisci, ullam a non est aperiam rerum, deserunt eligendi, numquam explicabo delectus
+                                magnam dolore sapiente. Illum, blanditiis modi.</h4>
+                            <button>Reply</button>
+                        </div>
+                        <div class="commnentSon">
+                            <!--if have comment-->
+                        </div>
                     </div>
                 </div>
-                <div class="smallgroup">
+                <div class="smallgroupCommemt">
                     <img :src="image.image6" alt="">
-                    <div class="contentP2">
-                        <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
+                    <div class="commnentFather">
+                        <div class="contentP2">
+                            <p><span>Technology</span> / January 01, 2045</p>
+                            <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et beatae veritatis repellat
+                                adipisci, ullam a non est aperiam rerum, deserunt eligendi, numquam explicabo delectus
+                                magnam dolore sapiente. Illum, blanditiis modi.</h4>
+                            <button>Reply</button>
+                        </div>
+                        <div class="commnentSon">
+                            <div class="smallgroupCommemt">
+                            <img :src="image.image6" alt="">
+                            <div class="commnentFather">
+                                <div class="contentP2">
+                                    <p><span>Technology</span> / January 01, 2045</p>
+                                    <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et beatae veritatis
+                                        repellat adipisci, ullam a non est aperiam rerum, deserunt eligendi, numquam
+                                        explicabo delectus magnam dolore sapiente. Illum, blanditiis modi.</h4>
+                                    <button>Reply</button>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="container">
+                <h2 class="title">Leave a comment</h2>
+                <form>
+                <div class="form-group">
+                    <label for="name" class="label">Name *</label>
+                    <input type="text" id="name" class="input" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="label">Email *</label>
+                    <input type="email" id="email" class="input" required>
+                </div>
+                <div class="form-group">
+                    <label for="website" class="label">Website</label>
+                    <input type="url" id="website" class="input">
+                </div>
+                <div class="form-group">
+                    <label for="message" class="label">Message *</label>
+                    <textarea id="message" rows="4" class="textarea" required></textarea>
+                </div>
+                <button type="submit" class="button">Leave a comment</button>
+                </form>
+            </div>
         </div>
         <!--end6-->
-         <!--7-->
-         <div class="right1">
+        <!--7-->
+        <div class="right1">
             <div class="hedearPopular">
                 <p>Follow Us</p>
             </div>
@@ -86,28 +184,28 @@ import image from '@/assets/image/ImportImage'
                     <img :src="image.image6" alt="">
                     <div class="contentP2">
                         <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
+                        <h4>Sanctus amet sed amet ip sum lorme.</h4>
                     </div>
                 </div>
                 <div class="smallgroup">
                     <img :src="image.image6" alt="">
                     <div class="contentP2">
                         <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
+                        <h4>Sanctus amet sed amet ip sum lorme.</h4>
                     </div>
                 </div>
                 <div class="smallgroup">
                     <img :src="image.image6" alt="">
                     <div class="contentP2">
                         <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
+                        <h4>Sanctus amet sed amet ip sum lorme.</h4>
                     </div>
                 </div>
                 <div class="smallgroup">
                     <img :src="image.image6" alt="">
                     <div class="contentP2">
                         <p><span>Technology</span> / January 01, 2045</p>
-                        <h5>Sanctus amet sed amet ip sum lorme.</h5>
+                        <h4>Sanctus amet sed amet ip sum lorme.</h4>
                     </div>
                 </div>
                 <div class="hedearPopular">
@@ -137,17 +235,31 @@ import image from '@/assets/image/ImportImage'
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     gap: 10px;
-    /* background-color: #2196F3; */
     margin: 10px 10%;
+}
+.addressCategoties{
+    margin: 10px 10%;
+    color: #8b8b8b;
+    span {
+        color: #ff0000;
+    }
 }
 a {
     text-decoration: none;
     color: #8b8b8b;
 }
+
+.title {
+    font-weight: bolder;
+    margin: 10px 0;
+    color: #656565;
+}
+
 .group3 {
     grid-column: 1 / span 2;
     grid-row: 1;
 }
+
 .hedearPopular {
     grid-column: 1 / span 2;
     grid-row: 1;
@@ -161,12 +273,26 @@ a {
     font-size: larger;
     font-weight: bolder;
     height: 50px;
-
-    a {
-        text-decoration: none;
-        font-size: 12px;
-    }
 }
+
+.hinh_anh {
+    width: 50%;
+    height: auto;
+    float: left;
+    margin: 0 20px 20px 0;
+}
+
+.hinh_anh2 {
+    width: 50%;
+    height: auto;
+    float: right;
+    margin: 0 0 20px 20px;
+}
+
+.contentP-and-img img {
+    width: 150px;
+}
+
 
 .right1 {
     grid-column: 3;
@@ -174,15 +300,13 @@ a {
 }
 
 .cardFeatured1 {
+    display: flex;
+    flex-direction: column;
     background-color: white;
     width: 100%;
     position: relative;
-
-    span {
-        color: red;
-    }
-
     margin-bottom: 10px;
+    padding: 20px;
 }
 
 .cardFeatured1 img {
@@ -190,33 +314,54 @@ a {
     height: 50%;
 }
 
-h5 {
+h4 {
     color: rgb(103, 103, 103);
     font-weight: normal;
 }
 
-.contentP {
-    margin: 20px;
-    padding: 10px;
+.cardSmall2 {
+    background-color: white;
+    padding: 20px;
 }
 
 .smallgroup {
     display: flex;
     margin-bottom: 10px;
     background-color: #fff;
-
-    span {
-        color: red;
-    }
 }
 
 .smallgroup img {
     width: 90px;
-    object-fit: cover;
 }
 
-.contentP2 {
-    margin: 10px;
+.smallgroupCommemt {
+    display: flex;
+    margin-bottom: 10px;
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+.smallgroupCommemt img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin-top: 5px;
+}
+
+.commnentFather {
+    margin: 0 10px;
+}
+
+button {
+    background-color: #fff;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    color: #656565;
+}
+
+button:hover {
+    background-color: #d4d4d4;
+    transition: background-color .3s;
 }
 
 .socicalCount {
@@ -247,39 +392,50 @@ h5 {
 }
 
 .EmailForm {
-    background-color: #fff;
-    text-align: center;
-    padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  justify-content: center;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .EmailForm p {
-    background-color: #fff;
-    color: rgb(126, 126, 126);
+  margin-bottom: 16px;
+  font-size: 1rem;
+  color: #4b5563;
 }
 
 .EmailSearch {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
-.EmailSearch input[type="text"] {
-    padding: 10px;
-    border: 1px solid #ccc;
+.EmailSearch input {
+  flex: 1;
+  border: 1px solid #d1d5db;
+  padding: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.EmailSearch input::placeholder {
+  color: #9ca3af;
 }
 
 .EmailSearch button {
-    padding: 10px;
-    color: #fff;
-    background-color: #ff0000;
-    border: 1px solid #ff0000;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  background-color: #f63b3b;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 40px;
 }
 
 .EmailSearch button:hover {
-    background-color: #b30000;
+  background-color: #eb2525;
 }
 
 .imageSigle {
@@ -297,75 +453,81 @@ h5 {
     object-fit: cover;
 }
 
-.group5 {
-    grid-column: 1 / span 2;
-    grid-row: 3;
-}
-
-.hedearPopular2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    padding: 5px;
-    margin-bottom: 10px;
-    font-size: larger;
-    font-weight: bolder;
-    height: 50px;
-
-    a {
-        text-decoration: none;
-        font-size: 12px;
-    }
-}
-
-.group5 .ads {
-    background-color: #000;
-    color: #fff;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-
-    h3 {
-        font-size: 40px;
-    }
-}
-
-.group5 .ads span {
-    margin: 0 20px;
-}
-
-.group5 .ads span:first-child {
-    text-align: end;
-}
 .button-container {
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     gap: 2px;
-    padding: 10px;
 }
 
 .grid-button {
-    padding: 5px 10px;
     background-color: transparent;
     border: 1px solid #656565;
     color: #8b8b8b;
     cursor: pointer;
     transition: background-color 0.3s;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 
 .grid-button:hover {
     background-color: #b8b8b87b;
 }
-@media (max-width: 900px) {
-    .conatainerSpan3 {
-    display: block;
-}
-.smallgroup img {
-    width: 30%;
+
+.container {
+  margin: 10px 0;
+  padding: 24px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.button {
+  background-color: #ef4444;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 0.875rem;
 }
+
+.button:hover {
+  background-color: #dc2626;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 8px;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
+
+@media (max-width: 900px) {
+    .conatainerSpan3 {
+        display: block;
+    }
+
+    .smallgroup img {
+        width: 30%;
+    }
+}
+
 </style>
