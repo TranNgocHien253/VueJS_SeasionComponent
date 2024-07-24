@@ -48,11 +48,26 @@ window.addEventListener('load', handleResize);
   <div class="containerHeader">
     <div class="topnav" v-show="showSearchBox">
       <div class="routerHeader">
-        <RouterLink to="/" :class="{ active: route.path === '/' }">Home</RouterLink>
-        <RouterLink to="/categories" :class="{ active: route.path === '/categories' }">Categories</RouterLink>
-        <RouterLink to="/SingleNews" :class="{ active: route.path === '/SingleNews' }">Single News</RouterLink>
-        <RouterLink to="/labala1" :class="{ active: route.path === '/labala1' }">Dropdown</RouterLink>
-        <RouterLink to="/labala11" :class="{ active: route.path === '/labala11' }">Contact</RouterLink>
+        <div>
+          <RouterLink to="/" :class="{ active: route.path === '/' }">Home</RouterLink>
+          <RouterLink to="/categories" :class="{ active: route.path === '/categories' }">Categories</RouterLink>
+          <RouterLink to="/SingleNews" :class="{ active: route.path === '/SingleNews' }">Single News</RouterLink>
+        </div>
+
+
+        <div class="dropdown">
+          <!-- <button class="dropdown-btn">Dropdown <i class="fa fa-caret-down"></i> </button>
+          <div class="dropdown-content"> -->
+             <RouterLink to="/labala1" :class="{ active: route.path === '/labala1' }">Dropdown <i class="fa fa-caret-down"></i></RouterLink>
+            <!--<RouterLink to="/labala13" :class="{ active: route.path === '/labala13' }">Dropdown</RouterLink>
+            <RouterLink to="/labala14" :class="{ active: route.path === '/labala14' }">Dropdown</RouterLink> -->
+          <!-- </div> -->
+        </div>
+
+        
+        <div>
+          <RouterLink to="/labala11" :class="{ active: route.path === '/labala11' }">Contact</RouterLink>
+        </div>
       </div>
       <div class="search-container">
         <input type="text" placeholder="Keyword" name="search">
@@ -110,6 +125,7 @@ window.addEventListener('load', handleResize);
 
 .routerHeader {
   margin: 0px 20px;
+  display: flex;
 }
 
 .topnav a:hover {
@@ -242,5 +258,47 @@ window.addEventListener('load', handleResize);
     margin: 0;
     padding: 14px;
   }
+  .routerHeader {
+  display: block;
+}
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+
+.dropdown-btn {
+  padding: 10px 20px; 
+  font-size: 16px;
+  border: none; 
+  cursor: pointer; 
+  background-color: transparent;
+}
+
+
+.dropdown-content {
+  display: none; 
+  position: absolute; 
+  background-color: #ffffff;
+  z-index: 1; 
+}
+
+
+.dropdown-content a {
+  color: black;
+  text-decoration: none; 
+  display: block; 
+  width: 200px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.dropdown:hover .dropdown-btn {
+  background-color: #dadada; 
 }
 </style>
