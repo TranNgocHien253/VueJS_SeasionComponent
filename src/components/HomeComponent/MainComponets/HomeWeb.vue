@@ -93,7 +93,10 @@ onUnmounted(() => {
     gap: 20px;
     margin: 10px 10%;
 }
-
+a {
+    text-decoration: none;
+    color: #8b8b8b;
+}
 .colum2 {
     margin: 20px 10px;
     display: grid;
@@ -274,9 +277,9 @@ button:hover {
     display: flex;
     justify-content: space-between;
     background-color: #fff;
-    padding: 5px;
+    padding: 5px 5px 5px 20px;
     margin-bottom: 10px;
-
+    font-weight: bolder;
     a {
         text-decoration: none;
         font-size: 15px;

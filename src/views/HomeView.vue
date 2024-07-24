@@ -1,17 +1,11 @@
 <script setup>
-import HomeWeb from '../components/HomeComponets/HomeWeb.vue'
-import ListHomeWeb from '../components/HomeComponets/ListHomeWeb.vue'
-import PopularHomeWeb from '../components/HomeComponets/PopularHomeWeb.vue'
+import HomeWeb from '../components/HomeComponent/MainComponets/HomeWeb.vue'
+import ListHomeWeb from '../components/HomeComponent/MainComponets/ListHomeWeb.vue'
+import PopularHomeWeb from '../components/HomeComponent/MainComponets/PopularHomeWeb.vue'
 </script>
 
 <template>
-  <header>
     <HomeWeb />
     <ListHomeWeb />
     <PopularHomeWeb />
-
-  </header>
-
-  <main>
-  </main>
 </template>

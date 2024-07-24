@@ -46,9 +46,9 @@ window.addEventListener('load', handleResize);
     <div class="topnav" v-show="showSearchBox">
       <div class="routerHeader">
         <RouterLink to="/" :class="{ active: currentRoute === '/' }" @click="currentRoute = '/'">Home</RouterLink>
-        <RouterLink to="/about" :class="{ active: currentRoute === '/about' }" @click="currentRoute = '/about'">
+        <RouterLink to="/categories" :class="{ active: currentRoute === '/categories' }" @click="currentRoute = '/categories'">
           Categories</RouterLink>
-        <RouterLink to="/" :class="{ active: currentRoute === '/labala' }" @click="currentRoute = '/labala'">Single News
+        <RouterLink to="/SingleNews" :class="{ active: currentRoute === '/SingleNews' }" @click="currentRoute = '/SingleNews'">Single News
         </RouterLink>
         <RouterLink to="/" :class="{ active: currentRoute === '/labala1' }" @click="currentRoute = '/labala1'">Dropdown
         </RouterLink>

@@ -50,6 +50,10 @@
             </ul>
         </div>
     </div>
+<div class="endFooter">
+        <p><i class="fa fa-copyright"></i> <span>Your Site Name</span>. All Right Reserved. Designed by <span>HTML Codex</span></p>
+    
+</div>
 </template>
 <style scoped>
 .footerHome {
@@ -85,7 +89,8 @@
     transition: background-color 0.3s;
     white-space: nowrap;
 }
-.icon{
+
+.icon {
     width: 30px;
     height: 30px;
     margin-right: 10px;
@@ -93,5 +98,35 @@
 
 .grid-button:hover {
     background-color: #b8b8b87b;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li::before {
+    content: "> ";
+    color: black;
+    font-weight: bold;
+}
+.endFooter {
+    color: #595959;
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 150px;
+    margin-top: 10px;
+    span {
+        color: red;
+    }
+}
+@media (max-width: 800px) {
+    .footerHome {
+        display: block;
+    }
+
+    .footerHome__container {
+        width: 100%;
+    }
 }
 </style>

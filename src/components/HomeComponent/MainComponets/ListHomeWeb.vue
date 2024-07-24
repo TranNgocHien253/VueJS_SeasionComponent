@@ -169,7 +169,11 @@ onMounted(() => {
   gap: 20px;
   margin: 10px 10%;
 }
-
+a {
+    text-decoration: none;
+    color: #8b8b8b;
+    font-weight: normal;
+}
 .listGroup {
   display: flex;
   flex-direction: column;
@@ -195,6 +199,8 @@ onMounted(() => {
   background-color: #fff;
   padding: 5px;
   margin-bottom: 10px;
+  padding-left: 20px;
+  font-weight: bolder;
 }
 
 .groupList4 {
@@ -210,6 +216,7 @@ onMounted(() => {
   width: calc(100% - 20px);
   display: flex;
   justify-content: space-between;
+  justify-items: center;
   transform: translateY(-50%);
   z-index: 2;
 }
@@ -221,7 +228,7 @@ button {
   width: 40px;
   height: 40px;
   border-radius: 5px;
-  margin-left: 10px;
+  margin: 0 5px;
   font-size: 20px;
   cursor: pointer;
 }

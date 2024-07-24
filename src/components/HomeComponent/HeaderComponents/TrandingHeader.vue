@@ -10,7 +10,7 @@
         <button class="nav-button"><</button>
         <button class="nav-button">></button>
       </div>
-      <div class="tranding-text">Labore sit justo amet eos sed, et sanctus dolor diam eos</div>
+      <p class="tranding-text">Labore sit justo amet eos sed, et sanctus dolor diam eos</p>
     </div>
     <div class="date">
       Monday, January 01, 2045
@@ -27,7 +27,10 @@
   border-bottom: 1px solid #ddd;
   padding: 0 5%;
 }
-
+p{
+    text-decoration: none;
+    color: #8b8b8b;
+}
 .tranding {
   display: flex;
   align-items: center;
