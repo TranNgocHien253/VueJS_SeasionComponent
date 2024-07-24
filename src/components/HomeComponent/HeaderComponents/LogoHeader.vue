@@ -1,6 +1,13 @@
+<script setup>
+import { useRouter } from 'vue-router'
+const router = useRouter();
+const navigateHome = () => {
+  router.push('/');
+};
+</script>
 <template>
     <div class="header">
-        <div class="logo">NEWS<span>ROOM</span></div>
+        <div class="logo" @click="navigateHome">NEWS<span>ROOM</span></div>
         <div class="ads">
             <span>
                 <h3>&lt;html&gt;</h3>
@@ -23,7 +30,7 @@
     font-weight: bold;
     color: #d0021b;
     font-size: 30px;
-
+    cursor: pointer;
     span {
         color: #000;
     }

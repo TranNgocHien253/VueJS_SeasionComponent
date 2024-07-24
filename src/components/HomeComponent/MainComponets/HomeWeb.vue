@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 import image from '@/assets/image/ImportImage';
-
+import { RouterLink } from 'vue-router';
 // Array of groupHeader items
 const items = [
     { image: image.image1, text: 'AI enhances work efficiency and automation.' },
@@ -69,10 +69,12 @@ onUnmounted(() => {
                         <img :src="image.image8" alt="">
                         <p>Business</p>
                     </div>
-                    <div class="groupCategories">
-                        <img :src="image.image7" alt="">
-                        <p>Technology</p>
-                    </div>
+                    <RouterLink to="/categories">
+                        <div class="groupCategories">
+                            <img :src="image.image7" alt="">
+                            <p>Technology</p>
+                        </div>
+                    </RouterLink>
                     <div class="groupCategories">
                         <img :src="image.image6" alt="">
                         <p>Entertainment</p>
