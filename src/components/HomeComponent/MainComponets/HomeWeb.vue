@@ -98,12 +98,13 @@ onUnmounted(() => {
 a {
     text-decoration: none;
     color: #8b8b8b;
+    font-weight: normal;
 }
 .colum2 {
-    margin: 20px 10px;
+    margin: 10px 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+    gap: 10px;
 }
 
 .headerHome {
@@ -112,21 +113,23 @@ a {
   position: relative;
   overflow: hidden;
   margin: 0;
+  gap: 10px;
 }
 
 .groupHeader {
-    width: 100%;
-  max-height: 100px;
+ width: 100%;
+  max-height: 150px;
+  min-height: 100px;
   background-color: #fff;
   display: flex;
   align-items: center;
-  margin: 0 10px;
+  /* margin: 0 10px; */
 }
 
 
 .groupHeader img {
     width: 100px;
-    height: auto;
+    height: 100px;
     background-size: cover;
     margin-right: 10px;
     object-fit: cover;
@@ -190,7 +193,6 @@ a {
         /* Chuyển sang flexbox layout */
         display: flex;
         flex-direction: column; /* Sắp xếp theo hàng dọc */
-        gap: 20px;
     }
 
     .mainHome,

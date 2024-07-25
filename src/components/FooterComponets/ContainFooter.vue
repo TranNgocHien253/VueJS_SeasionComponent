@@ -62,6 +62,10 @@
     background-color: #fff;
     padding: 20px;
     color: rgb(51, 51, 51);
+    button {
+        border: 2px solid #bfbfbf;
+        color: #a5a5a5;
+    }
 }
 
 .footerHome__container {

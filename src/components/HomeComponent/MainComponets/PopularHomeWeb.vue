@@ -218,14 +218,14 @@ const articles = ref([
                 <p>Tags</p>
             </div>
             <div class="button-container">
-                <button class="grid-button">Button 1</button>
-                <button class="grid-button">Button 2</button>
-                <button class="grid-button">Button 3</button>
+                <button class="grid-button">Button 13</button>
+                <button class="grid-button">Button</button>
+                <button class="grid-button">Button 3333</button>
                 <button class="grid-button">Button 4</button>
                 <button class="grid-button">Button 5</button>
                 <button class="grid-button">Button 6ada</button>
                 <button class="grid-button">Button 7</button>
-                <button class="grid-button">Button8</button>
+                <button class="grid-button">Button 87654</button>
             </div>
         </div>
         <!--end7-->
@@ -269,14 +269,16 @@ a {
 
 .right1 {
     grid-column: 3;
-    grid-row: 1 / span 4;
+    grid-row: 1 / span 5;
+    /* display: grid; */
+    /* gap:10px; */
 }
 
 .cardFeatured1 {
     background-color: white;
     width: 100%;
     position: relative;
-
+    margin-top: -10px;
     span {
         color: red;
     }
@@ -298,12 +300,15 @@ h5 {
     margin: 20px;
     padding: 10px;
 }
-
+.cardSmall2, .cardSmall1 {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 10px;
+    
+}
 .smallgroup {
     display: flex;
-    margin-bottom: 10px;
     background-color: #fff;
-
     span {
         color: red;
     }
@@ -311,6 +316,7 @@ h5 {
 
 .smallgroup img {
     width: 90px;
+    object-fit: cover;
 }
 
 .contentP2 {
@@ -321,7 +327,7 @@ h5 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0;
 }
 
 .socialCount1 {

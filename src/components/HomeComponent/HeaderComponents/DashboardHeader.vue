@@ -8,6 +8,11 @@ const router = useRouter();
 
 const showSearchBox = ref(true);
 const hideSearchBox = ref(false);
+
+const dropdownOpen = ref(false);
+const selectedOption = ref('Dropdown');
+const activeItem = ref(null);
+
 const toggleSearchBox = () => {
   showSearchBox.value = !showSearchBox.value;
 };
@@ -27,6 +32,21 @@ const navigateHome = () => {
   showSearchBox.value = false;
 };
 
+import { RouterLink } from 'vue-router';
+
+const toggleDropdown = () => {
+  dropdownOpen.value = !dropdownOpen.value;
+};
+
+const selectOption = (option) => {
+  selectedOption.value = option;
+  activeItem.value = option;
+  dropdownOpen.value = false;
+};
+const offDropDownRed = () => {
+  activeItem.value = null;
+  dropdownOpen.value = false;
+}
 window.addEventListener('resize', handleResize);
 window.addEventListener('load', handleResize);
 </script>
@@ -48,7 +68,7 @@ window.addEventListener('load', handleResize);
   <div class="containerHeader">
     <div class="topnav" v-show="showSearchBox">
       <div class="routerHeader">
-        <div>
+        <div @click="offDropDownRed">
           <RouterLink to="/" :class="{ active: route.path === '/' }">Home</RouterLink>
           <RouterLink to="/categories" :class="{ active: route.path === '/categories' }">Categories</RouterLink>
           <RouterLink to="/SingleNews" :class="{ active: route.path === '/SingleNews' }">Single News</RouterLink>
@@ -56,16 +76,24 @@ window.addEventListener('load', handleResize);
 
 
         <div class="dropdown">
-          <!-- <button class="dropdown-btn">Dropdown <i class="fa fa-caret-down"></i> </button>
-          <div class="dropdown-content"> -->
-             <RouterLink to="/labala1" :class="{ active: route.path === '/labala1' }">Dropdown <i class="fa fa-caret-down"></i></RouterLink>
-            <!--<RouterLink to="/labala13" :class="{ active: route.path === '/labala13' }">Dropdown</RouterLink>
-            <RouterLink to="/labala14" :class="{ active: route.path === '/labala14' }">Dropdown</RouterLink> -->
-          <!-- </div> -->
+          <button @click="toggleDropdown" class="dropdown-button" :class="{ 'button-active': activeItem !== null }">
+            {{ selectedOption }}
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div v-if="dropdownOpen" class="dropdown-content">
+            <RouterLink to="/labala1" class="dropdown-item" :class="{ 'active': activeItem === 'Dropdown 0' }"
+              @click.native="selectOption('Dropdown 0')">Dropdown 0</RouterLink>
+            <RouterLink to="/labala1" class="dropdown-item" :class="{ 'active': activeItem === 'Dropdown 1' }"
+              @click.native="selectOption('Dropdown 1')">Dropdown 1</RouterLink>
+            <RouterLink to="/labala1" class="dropdown-item" :class="{ 'active': activeItem === 'Dropdown 2' }"
+              @click.native="selectOption('Dropdown 2')">Dropdown 2</RouterLink>
+            <RouterLink to="/labala1" class="dropdown-item" :class="{ 'active': activeItem === 'Dropdown 3' }"
+              @click.native="selectOption('Dropdown 3')">Dropdown 3</RouterLink>
+          </div>
         </div>
 
-        
-        <div>
+
+        <div @click="offDropDownRed">
           <RouterLink to="/labala11" :class="{ active: route.path === '/labala11' }">Contact</RouterLink>
         </div>
       </div>
@@ -95,6 +123,7 @@ window.addEventListener('load', handleResize);
   color: #d0021b;
   font-size: 30px;
   cursor: pointer;
+
   span {
     color: #000;
   }
@@ -104,7 +133,7 @@ window.addEventListener('load', handleResize);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ffffff;
+
   margin: 0 5%;
 }
 
@@ -140,7 +169,7 @@ window.addEventListener('load', handleResize);
 
 .topnav .search-container {
   display: flex;
-  align-items: center; 
+  align-items: center;
   margin: 3px;
 }
 
@@ -148,13 +177,13 @@ window.addEventListener('load', handleResize);
   padding: 6px;
   font-size: 16px;
   border: 2px solid #e3e3e3;
-  flex: 1; 
-  box-sizing: border-box; 
+  flex: 1;
+  box-sizing: border-box;
 }
 
 .topnav .search-container button {
   float: right;
-  background: #ddd;
+
   background-size: cover;
   border: none;
   cursor: pointer;
@@ -172,6 +201,7 @@ window.addEventListener('load', handleResize);
 .topnav .search-container button:hover {
   background: #ccc;
 }
+
 .containermenu input {
   position: absolute;
   opacity: 0;
@@ -239,16 +269,18 @@ window.addEventListener('load', handleResize);
     width: 100%;
     margin-bottom: 20px;
   }
+
   .topnav input[type=text],
   .topnav .search-container {
     width: auto;
     margin-left: 10px;
+
     button {
       margin-right: 10px;
       transform: translateX(-10px)
     }
   }
-  
+
 
   .topnav a {
     float: none;
@@ -258,47 +290,49 @@ window.addEventListener('load', handleResize);
     margin: 0;
     padding: 14px;
   }
+
   .routerHeader {
-  display: block;
-}
+    display: block;
+  }
+
+  .containerHeader {
+    border-radius: 0 0 30px 30px;
+  }
 }
 
 .dropdown {
   position: relative;
   display: inline-block;
 }
-
-
-.dropdown-btn {
-  padding: 10px 20px; 
-  font-size: 16px;
-  border: none; 
-  cursor: pointer; 
-  background-color: transparent;
+.button-active {
+  background-color: #ff0000;
 }
-
+.dropdown-button {
+  border: none;
+  background-color: #ffffff;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+}
 
 .dropdown-content {
-  display: none; 
-  position: absolute; 
-  background-color: #ffffff;
-  z-index: 1; 
-}
-
-
-.dropdown-content a {
-  color: black;
-  text-decoration: none; 
-  display: block; 
-  width: 200px;
-}
-
-.dropdown:hover .dropdown-content {
   display: block;
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  min-width: 160px;
 }
 
+.dropdown-item {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
 
-.dropdown:hover .dropdown-btn {
-  background-color: #dadada; 
+.dropdown-item:hover {
+  background-color: #f1f1f1;
 }
 </style>

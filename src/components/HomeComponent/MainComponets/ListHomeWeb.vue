@@ -166,7 +166,7 @@ onMounted(() => {
 <style scoped>
 .conatainerSpan3 {
   grid-template-rows: auto auto;
-  gap: 20px;
+  /* gap: 10px; */
   margin: 10px 10%;
 }
 a {
@@ -182,7 +182,7 @@ a {
 .collum2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 10px;
 }
 
 .groupList2 {
@@ -196,6 +196,7 @@ a {
   flex: 1;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #fff;
   padding: 5px;
   margin-bottom: 10px;
